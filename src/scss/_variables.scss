@@ -1,0 +1,30 @@
+// File _variables.scss này chứa các biến sử dụng trong dự án SCSS, giúp dễ dàng quản lý và thay đổi các giá trị chung như màu sắc, kích thước, và font chữ cho toàn bộ dự án. Tiền tố _ trước tên file có nghĩa là file này là một partial file trong SCSS và sẽ không được biên dịch thành CSS riêng lẻ. Nó chỉ dùng để import vào các file SCSS khác.
+
+// Màu nền chính cho body của trang
+$body-background: #0f0f0f; 
+
+$main-color: #ff1111; 
+
+// Màu của chữ (màu trắng)
+$text-color: white; 
+
+// Hiệu ứng đổ bóng cho các phần tử
+$box-shadow: rgba(110, 110, 121, 0.212) 0px 7px 29px 0px; 
+
+// Chiều cao của header (phần đầu trang) khi ở trạng thái ban đầu
+$header-height: 8rem; 
+
+// Chiều cao của header khi bị thu nhỏ (ví dụ khi cuộn trang)
+$header-shrink-height: 5rem; 
+
+// Bo tròn góc của các hộp hoặc phần tử
+$border-radius: 30px; 
+
+// Độ rộng tối đa của thiết bị di động
+$mobile-width: 600px; 
+
+// Độ rộng tối đa của thiết bị máy tính bảng
+$tablet-width: 1024px; 
+
+// Font chữ chính cho toàn bộ trang
+$font-family: "Montserrat", sans-serif;

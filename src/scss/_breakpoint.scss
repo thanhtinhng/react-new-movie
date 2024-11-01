@@ -1,0 +1,26 @@
+// responsive
+@use './variables' as *;
+
+@mixin mobile() {
+    // Media query cho thiết bị di động
+    @media only screen and (max-width: $mobile-width) {
+        @content; // Chèn nội dung được truyền vào mixin này
+    }
+}
+
+@mixin tablet() {
+    // Media query cho máy tính bảng
+    @media only screen and (max-width: $tablet-width) {
+        @content; 
+    }
+}
+
+// Cách sử dụng trong SCSS
+// 
+// .button {
+//     background-color: blue;
+    
+//     @include mobile {
+//         background-color: green;
+//     }
+// }

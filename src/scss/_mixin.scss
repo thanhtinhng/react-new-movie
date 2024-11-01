@@ -1,0 +1,27 @@
+// Mixin trong SCSS là một khối mã dùng để nhóm các thuộc tính CSS và có thể tái sử dụng ở nhiều nơi trong dự án mà không cần lặp lại code. Mixins cho phép bạn truyền tham số, giúp chúng linh hoạt và dễ tùy chỉnh hơn, đồng thời làm cho code ngắn gọn và dễ bảo trì.
+
+// Mixin "flex" tạo layout flex với các tham số căn chỉnh và sắp xếp
+@mixin flex($align-item, $justify-content) {
+    display: flex;
+    align-items: $align-item; // $align-item: tham số điều chỉnh align-items (ví dụ: center, flex-start)
+    justify-content: $justify-content; // $justify-content: tham số điều chỉnh justify-content (ví dụ: space-between, center)
+}
+
+// Mixin "overplay" tạo lớp phủ màu đen với độ trong suốt có thể điều chỉnh
+// $color: màu nền cho lớp phủ (mặc định là màu đen)
+// $alpha: độ mờ (opacity) của màu nền (mặc định là 1.0 - không trong suốt)
+@mixin overplay($color: #000000, $alpha: 1.0) {
+    background-color: rgba($color, $alpha);
+}
+
+// Cách sử dụng trong scss:
+
+//     .container {
+//         @include flex(center, space-between);
+//     }
+
+//     .overlay {
+//         @include overplay(#000, 0.5);
+//     }
+
+
