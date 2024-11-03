@@ -1,6 +1,8 @@
 import './App.scss';
+import apiConfig from './api/apiConfig'
 
 function App() {
+
   return (
     <div className='global-style'>
       <a href="#">test</a>
