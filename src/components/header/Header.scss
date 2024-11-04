@@ -26,10 +26,10 @@
     }
 
     &__navigation {
-        @include flex(center, unset);
+        @include flex(center, space-between);
+        width: 220px;
 
         li {
-            margin-left: 20px;
             font-weight: 600;
             position: relative;
 
