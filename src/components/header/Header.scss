@@ -1,1 +1,54 @@
 @use "../../scss/" as *;
+
+.logo {
+    font-size: 32px;
+    font-weight: 600;
+    @include flex(center, unset);
+
+    img {
+        margin-right: 10px;
+        width: 50px;
+    }
+}
+
+.header {
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+
+    &__wrap {
+        @include flex(center, space-between);
+        padding: 0 35px;
+        height: 100%
+    }
+
+    &__navigation {
+        @include flex(center, unset);
+
+        li {
+            margin-left: 20px;
+            font-weight: 600;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2px;
+                background-color: $main-color;
+                transition: width 0.5s ease;
+            }
+
+            &.active::after,
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+}
