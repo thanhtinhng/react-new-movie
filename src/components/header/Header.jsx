@@ -5,17 +5,17 @@ import logo from '../../assets/tmovie.png'
 
 const headerNavigation = [
   {
-    display: 'Home',
+    display: 'Trang Chủ',
     path: '/'
   },
 
   {
-    display: 'Movies',
+    display: 'Phim Lẻ',
     path: '/movie'
   },
 
   {
-    display: 'Tv Series',
+    display: 'Phim Bộ',
     path: '/tv'
   }
 ]

@@ -28,7 +28,7 @@
 
     &__navigation {
         @include flex(center, space-between);
-        width: 220px;
+        width: 300px;
 
         li {
             font-weight: 600;
@@ -37,7 +37,7 @@
             &::after {
                 content: "";
                 position: absolute;
-                bottom: 0;
+                bottom: -3px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 0;
