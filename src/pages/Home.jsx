@@ -1,16 +1,16 @@
 import React, { useState }  from 'react'
-import Button, {OutlineButton} from '../components/button/Button'
+// import Button, {OutlineButton} from '../components/button/Button'
 import './Home.scss'
-import Modal, {ModalContent} from '../components/modal/Modal'
-import Slide from '../components/slide/Slide'
+// import Modal, {ModalContent} from '../components/modal/Modal'
+import Carousel from '../components/carousel/Carousel'
 
 const Home = () => {
 
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   return (
     <div className='test'>
-      Home
+      {/* Home
       <Button>button</Button>
       <OutlineButton>button</OutlineButton>
       <div>
@@ -21,8 +21,8 @@ const Home = () => {
                     <p>This is a test modal content.</p>
                 </ModalContent>
             </Modal>
-            <Slide/>
-        </div>
+        </div> */}
+        <Carousel/>
     </div>
   )
 }

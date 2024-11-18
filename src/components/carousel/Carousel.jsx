@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import './Slide.scss';
+import './Carousel.scss';
 import Button, { OutlineButton } from '../button/Button';
 import Modal, { ModalContent } from '../modal/Modal';
 import apiConfig from '../../api/apiConfig';
@@ -31,8 +31,7 @@ const Carousel = () => {
             <Swiper
                 modules={[Autoplay]}
                 grabCursor={true}
-                slidesPerView={1}
-                autoplay={{ delay: 10000, disableOnInteraction: false }}
+            // autoplay={{ delay: 10000, disableOnInteraction: false }}
             >
                 {movies.map((movie, index) => (
                     <SwiperSlide key={index}>
@@ -72,32 +71,42 @@ const CarouselItem = props => {
         modal.classList.add('active');
     };
 
+    const [showModal, setShowModal] = useState(false);
+
     return (
-        <div
-            className={`carousel__item ${props.className}`}
-            style={{
-                backgroundImage: `url(${apiConfig.originalImage(
-                    movie.backdrop_path || movie.poster_path
-                )})`,
-            }}
-        >
-            <div className="carousel__item__content container">
-                <div className="carousel__item__content__poster">
-                    <img
-                        src={apiConfig.w500Image(movie.poster_path)}
-                        alt={movie.title}
-                    />
-                </div>
-                <div className="carousel__item__content__info">
-                    <h2 className="title">{movie.title}</h2>
-                    <p className="description">{movie.overview}</p>
-                    <div className="btns">
-                        <Button onClick={goToDetails} className="watch-btn" >Xem phim</Button>
-                        <OutlineButton onClick={openTrailer}>Trailer</OutlineButton>
+        <>
+            <div
+                className={`carousel__item ${props.className}`}
+                style={{
+                    backgroundImage: `url(${apiConfig.originalImage(
+                        movie.backdrop_path || movie.poster_path
+                    )})`,
+                }}
+            >
+                <div className="carousel__item__content container">
+                    <div className="carousel__item__content__poster">
+                        <img
+                            src={apiConfig.w500Image(movie.poster_path)}
+                            alt={movie.title}
+                        />
+                    </div>
+                    <div className="carousel__item__content__info">
+                        <h2 className="title">{movie.title}</h2>
+                        <p className="description">{movie.overview}</p>
+                        <div className="btns">
+                            <Button onClick={goToDetails} className="watch-btn" ><i class='bx bx-play-circle' ></i>Xem phim</Button>
+                            <OutlineButton onClick={openTrailer}>Trailer</OutlineButton>
+                            <OutlineButton onClick={() => setShowModal(true)}>+</OutlineButton>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <Modal className="modalFavourite" active={showModal}>
+                <ModalContent onClose={() => setShowModal(false)}>
+                    <h2>Thêm <span className="movieTitle">{movie.title}</span> vào danh sách yêu thích thành công.</h2>
+                </ModalContent>
+            </Modal>
+        </>
     );
 };
 

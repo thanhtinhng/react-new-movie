@@ -70,7 +70,7 @@ export const ModalContent = forwardRef((props, ref) => {
                 className="modal__content__close" // Nút đóng modal
                 onClick={closeModal}
             >
-                <i className="bx bx-x"></i> {/* Icon đóng*/}
+                <i className="bx bx-x"></i>
             </div>
         </div>
     );
