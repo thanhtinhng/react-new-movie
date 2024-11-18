@@ -18,6 +18,7 @@
     left: 0;
     z-index: 10;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.511);
 
     &__wrap {
         @include flex(center, space-between);
