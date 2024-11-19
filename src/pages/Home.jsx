@@ -3,6 +3,7 @@ import React, { useState }  from 'react'
 import './Home.scss'
 // import Modal, {ModalContent} from '../components/modal/Modal'
 import Carousel from '../components/carousel/Carousel'
+import SlideList from '../components/slidelist/SlideList'
 
 const Home = () => {
 
@@ -23,6 +24,7 @@ const Home = () => {
             </Modal>
         </div> */}
         <Carousel/>
+        <SlideList type='top_rated' category='tv' />
     </div>
   )
 }

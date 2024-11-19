@@ -1,0 +1,36 @@
+@use '../../scss/' as *;
+
+.list {
+    padding: 0 50px;
+}
+
+.swiper-slide {
+    width: 230px
+}
+
+.swiper-button-next {
+    position: absolute;
+    padding: 30px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.swiper-button-prev {
+    position: absolute;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 30px;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #000;
+}
