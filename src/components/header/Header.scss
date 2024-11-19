@@ -28,11 +28,13 @@
 
     &__navigation {
         @include flex(center, space-between);
-        width: 300px;
+        width: 400px;
+        margin-right: 20px;
 
         li {
             font-weight: 600;
             position: relative;
+            font-size: 1.3rem;
 
             &::after {
                 content: "";

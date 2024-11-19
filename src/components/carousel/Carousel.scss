@@ -32,43 +32,44 @@
     }
 
     &__content {
-        @include flex(flex-start, center);
+        display: flex;
         position: relative;
 
         &__info {
             width: 55%;
-            padding: 0 3rem;
+            padding: 0 48px;
             position: relative;
-            margin-right: 1.5rem;
-            margin-top: 3.5rem;
+            margin-right: 48px;
+            margin-top: 56px;
 
             .title {
-                font-size: 4.5rem;
+                font-size: 72px;
                 font-weight: 600;
                 line-height: 1;
-                margin-bottom: 2rem;
+                margin-bottom: 32px;
             }
 
             .description {
                 font-weight: 600;
-                margin-bottom: 2rem;
+                margin-bottom: 32px;
                 font-size: 1.2rem;
+                text-align: justify;
             }
 
             Button {
-                margin-right: 1.5rem;
+                margin-right: 24px;
             }
 
             .watch-btn {
                 padding-left: 45px;
             }
 
-            .btns,
-            .title,
-            .description {
+            .btns, .title, .description {
                 opacity: 0;
                 transform: translateY(-100px);
                 transition: transform 0.5s ease, opacity 0.5s ease;
+                // transform: scale(0);
+                // transition: transform 0.7s ease;
             }
         }
 
@@ -76,13 +77,12 @@
             flex: 1;
             @include flex(center, center);
             position: relative;
-            margin-left: 2rem;
+            margin-left: 32px;
 
             img {
                 width: 450px;
                 border-radius: $border-radius;
                 box-shadow: $box-shadow;
-
                 transform: scale(0);
                 transition: transform 0.7s ease;
             }
@@ -97,11 +97,10 @@
     }
 
     &.active > &__content > &__content__info {
-        .btns,
-        .title,
-        .description {
+        .btns, .title, .description {
             transform: translateY(0);
             opacity: 1;
+            // transform: scale(1);
         }
 
         .title {
