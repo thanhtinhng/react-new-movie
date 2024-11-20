@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Header.scss'
-import logo from '../../assets/tmovie.png'
+import logo from '../../assets/logo.svg'
 
 const headerNavigation = [
   {
@@ -31,7 +31,7 @@ const Header = () => {
       <div className="header__wrap">
 
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" id="logo" />
           <Link to='/'>NewMovies</Link>
         </div>
 
