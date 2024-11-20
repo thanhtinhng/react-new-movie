@@ -35,10 +35,12 @@
             &__item-container {
                 display: flex;
                 flex-direction: column;
+                font-size: 19px;
 
                 &__item {
                     padding: 5px 0;
                     cursor: pointer;
+                    margin-top: 5px;
                 }
             }
         }
@@ -49,32 +51,20 @@
     }
 }
 
-.lienhe {
-    display: flex;
-}
-
-.lienhe {
-    margin-bottom: 30px;
-}
-
-.lh-header {
-    margin-bottom: 5px;
-}
-
 .copyright {
     display: flex;
     @include flex(center, space-between);
     font-size: 22px;
     font-weight: 600;
-}
-
-.img-link {
-    width: 80px;
-    margin-right: 10px;
-    opacity: 0.8;
-    cursor: pointer;
-}
-
-.img-link:hover {
-    opacity: 100%;
+    
+    .img-link {
+        width: 80px;
+        margin-right: 10px;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    
+    .img-link:hover {
+        opacity: 100%;
+    }
 }

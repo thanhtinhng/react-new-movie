@@ -25,7 +25,7 @@ const Home = () => {
         </div> */}
         <Carousel/>
         <SlideList type='top_rated' category='tv' />
-        <SlideList type='popular' category='movie' />
+        <SlideList type='top_rated' category='movie' />
     </div>
   )
 }

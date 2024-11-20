@@ -31,7 +31,7 @@ const Carousel = () => {
             <Swiper
                 modules={[Autoplay]}
                 grabCursor={true}
-            // autoplay={{ delay: 5000, disableOnInteraction: false }}
+                autoplay={{ delay: 20000, disableOnInteraction: false }}
             >
                 {movies.map((movie, index) => (
                     <SwiperSlide key={index}>
@@ -94,7 +94,7 @@ const CarouselItem = props => {
                         <h2 className="title">{movie.title}</h2>
                         <p className="description">{movie.overview}</p>
                         <div className="btns">
-                            <Button onClick={goToDetails} className="watch-btn" ><i class='bx bx-play-circle' ></i>Xem phim</Button>
+                            <Button onClick={goToDetails} className="watch-btn" ><i class="fa-regular fa-circle-play"></i>Xem phim</Button>
                             <OutlineButton onClick={openTrailer}>Trailer</OutlineButton>
                             <OutlineButton onClick={() => setShowModal(true)}>+</OutlineButton>
                         </div>

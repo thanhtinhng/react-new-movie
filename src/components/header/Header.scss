@@ -1,9 +1,14 @@
 @use "../../scss/" as *;
 
+#logo {
+    color: red;
+}
+
 .logo {
     font-size: 32px;
     font-weight: 600;
     @include flex(center, unset);
+    
 
     img {
         margin-right: 10px;

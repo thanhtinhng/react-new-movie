@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.scss'
 import bg from '../../assets/footer-bg.jpg'
-import logo from '../../assets/tmovie.png'
+import logo from '../../assets/logo.svg'
 import youtube from '../../assets/youtube.png'
 import ins from '../../assets/ins.png'
 import facebook from '../../assets/facebook.png'
@@ -20,7 +20,7 @@ const Footer = () => {
               <Link to='/'>NewMovies</Link>
             </div>
             <p>
-              Cineb.net là một trang web xem phim trực tuyến miễn phí, hoàn toàn không có quảng cáo. Chúng tôi mang đến cho bạn trải nghiệm xem phim và TV-series với hơn 10.000 tựa phim mà không cần phải đăng ký hay trả phí. Ngoài ra, bạn cũng có thể tải xuống phim đầy đủ từ Cineb.net để xem lại bất cứ khi nào bạn muốn.
+              Newmovies.net là một trang web xem phim trực tuyến miễn phí, hoàn toàn không có quảng cáo. Chúng tôi mang đến cho bạn trải nghiệm xem phim với hơn 10.000 tựa phim mà không cần phải đăng ký hay trả phí. Ngoài ra, bạn cũng có thể tải xuống phim đầy đủ từ Newmovies.net để xem lại bất cứ khi nào bạn muốn.
               <br /><br />
             </p>
           </div>

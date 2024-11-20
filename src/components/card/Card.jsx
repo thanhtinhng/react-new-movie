@@ -17,7 +17,7 @@ const Card = props => {
         <Link to={link} draggable="false">
             <div className="card" style={{backgroundImage: `url(${bg})`}}>
                 <Button>
-                    <i className="bx bx-play-circle"></i>
+                    <i className="fa-regular fa-circle-play"></i>
                 </Button>
             </div>
             <h3>{movie.title || movie.name}</h3>
