@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { SwiperSlide, Swiper } from 'swiper/react';
-import tmdbApi, { category } from '../../api/tmdbApi';
-import apiConfig from '../../api/apiConfig';
+import tmdbApi from '../../api/tmdbApi';
+// import tmdbApi, { category } from '../../api/tmdbApi';
+// import apiConfig from '../../api/apiConfig';
 import { Navigation } from 'swiper/modules';
 import './SlideList.scss'
-// import MovieCard from '../movie-card/MovieCard';
+import Card from '../card/Card';
 
 const SlideList = props => {
 
@@ -34,13 +35,14 @@ const SlideList = props => {
         <div className="list">
             <Swiper navigation={true} modules={[Navigation]}
                 grabCursor={true}
-                spaceBetween={10}
+                spaceBetween={25}
                 slidesPerView={'auto'}
             >
                 {
                     movies.map((movie, i) => (
                         <SwiperSlide key={i}>
-                            <img src={apiConfig.w500Image(movie.poster_path)} alt="" />
+                            {/* <img src={apiConfig.w500Image(movie.poster_path)} alt="" /> */}
+                            <Card movie={movie} category={props.category}/>
                         </SwiperSlide>
                     ))
                 }

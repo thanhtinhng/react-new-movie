@@ -58,6 +58,13 @@
 
             Button {
                 margin-right: 24px;
+
+                .bx-play-circle {
+                    margin-right: 5px;
+                    padding-top: 3px;
+                    left: 14px;
+                    position: absolute;
+                }
             }
 
             .watch-btn {
@@ -119,11 +126,4 @@
 
 .movieTitle {
     color: $main-color
-}
-
-.bx-play-circle {
-    margin-right: 5px;
-    padding-top: 3px;
-    left: 14px;
-    position: absolute;
 }
