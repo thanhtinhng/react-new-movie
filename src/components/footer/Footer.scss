@@ -1,0 +1,80 @@
+@use '../../scss/' as *;
+
+.footer {
+    padding: 0px 50px;
+    font-weight: 500;
+    background-image: linear-gradient(to bottom, $body-background, #173c2d);
+    margin-top: 35px;
+
+    .logo-footer {
+        font-size: 32px;
+        font-weight: 600;
+        @include flex(center, unset);
+        margin: 10px 0;
+
+        img {
+            width: 25%;
+            margin-right: 10px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        &__col-1 {
+            text-align: justify;
+            width: 400px;
+            font-weight: 400;
+        }
+        
+        &__col {
+            margin-right: 30px;
+            margin-top: 20px;
+
+            &__item-container {
+                display: flex;
+                flex-direction: column;
+
+                &__item {
+                    padding: 5px 0;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &__col-4 {
+            padding-right: 35px;
+        }
+    }
+}
+
+.lienhe {
+    display: flex;
+}
+
+.lienhe {
+    margin-bottom: 30px;
+}
+
+.lh-header {
+    margin-bottom: 5px;
+}
+
+.copyright {
+    display: flex;
+    @include flex(center, space-between);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.img-link {
+    width: 80px;
+    margin-right: 10px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.img-link:hover {
+    opacity: 100%;
+}
