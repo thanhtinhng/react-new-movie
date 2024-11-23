@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import Genre from '../pages/Genre';
-import Detail from '../pages/Detail';
+import Home from '../pages/Home/Home';
+import Genre from '../pages/Genre/Genre';
+import Detail from '../pages/Detail/Detail';
 
 const AppRoutes  = () => {
     return (

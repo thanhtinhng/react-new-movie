@@ -42,7 +42,7 @@ const SlideList = props => {
                     movies.map((movie, i) => (
                         <SwiperSlide key={i}>
                             {/* <img src={apiConfig.w500Image(movie.poster_path)} alt="" /> */}
-                            <Card movie={movie} category={props.category}/>
+                            <Card movie={movie} category={props.category} className='card'/>
                         </SwiperSlide>
                     ))
                 }

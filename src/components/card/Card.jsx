@@ -9,12 +9,12 @@ const Card = props => {
 
     const movie  = props.movie;
 
-    const link = '/' + category[props.category] + '/' + movie.id;
+    const uri = '/' + category[props.category] + '/' + movie.id;
 
     const bg = apiConfig.w500Image(movie.poster_path || movie.backdrop_path);
 
     return (
-        <Link to={link} draggable="false">
+        <Link to={uri} draggable="false">
             <div className="card" style={{backgroundImage: `url(${bg})`}}>
                 <Button>
                     <i className="fa-regular fa-circle-play"></i>
