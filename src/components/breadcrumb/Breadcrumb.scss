@@ -1,0 +1,34 @@
+@use '../../scss/' as *;
+
+.container__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, #1a1a1a, #252525);
+    padding: 10px;
+    border-radius: 10px;
+
+    i {
+        color: $main-color;
+    }
+
+    a {
+        text-decoration: none;
+        color: $main-color;
+        font-weight: bold;
+    }
+
+    p {
+        color: white;
+        font-weight: bold;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+    }
+
+    .arror {
+        margin-right: 5px;
+    }
+}
