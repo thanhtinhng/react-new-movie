@@ -1,0 +1,50 @@
+@use "../../scss/" as *;
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+    &__loadmore {
+        text-align: center;
+    }
+
+    .card {
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    .page-item {
+        margin: 0 7px;
+
+        .page-link {
+            padding: 8px 15px;
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background: #444;
+            }
+        }
+
+        &.active .page-link {
+            background: $main-color;
+            font-weight: bold;
+        }
+
+        
+    }
+}

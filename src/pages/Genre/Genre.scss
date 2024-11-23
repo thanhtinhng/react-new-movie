@@ -1,0 +1,49 @@
+@use "../../scss/" as *;
+
+.container {
+    margin-top: $header-height;
+    padding: 30px 40px;
+
+    &__genre-header>h2 {
+        margin-bottom: 12px;
+        font-size: 36px;
+    }
+
+    &__movie-grid {
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+
+    .filter {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        position: absolute;
+        top: 110px;
+        right: 45px;
+
+        select {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+
+            &:focus {
+                outline: none;
+                border-color: white;
+            }
+
+            &:hover {
+                background-color: #444;
+            }
+        }
+    }
+}
+
+.small {
+    font-size: 18px;
+}

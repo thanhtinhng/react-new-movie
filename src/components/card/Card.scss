@@ -2,11 +2,11 @@
 
 .card {
     background: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: contain;
     padding-top: 385px;
     position: relative;
-
+    
     Button {
         position: absolute;
         top: 50%;
@@ -27,7 +27,7 @@
         transition: opacity 0.4s ease;
     }
 
-    &:hover::before{
+    &:hover::before {
         opacity: 1;
     }
 
