@@ -17,7 +17,7 @@
             color: white;
             border-radius: $border-radius;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             transition: all 0.3s ease;
 
@@ -48,8 +48,9 @@
             margin-right: 10px;
         }
 
-        .small {
-            width: 200px;
+        .small-btn {
+            width: 250px;
+            font-size: 20px;
         }
     }
 }
