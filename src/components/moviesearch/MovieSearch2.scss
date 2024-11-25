@@ -1,0 +1,17 @@
+@use '../../scss/' as *;
+
+.movie-search {
+    display: flex;
+    justify-content: space-between;
+
+    input {
+        border: 1px solid #555;
+        background-color: black;
+        padding: 8px 24px;
+        font-size: 17px;
+        border-radius: 5px;
+        color: white;
+        font-family: $font-family;
+        margin-right: 10px;
+    }
+}

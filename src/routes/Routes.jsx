@@ -5,10 +5,15 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import Genre from '../pages/Genre/Genre';
 import Detail from '../pages/Detail/Detail';
+import Search from '../pages/Search/Search';
 
 const AppRoutes  = () => {
     return (
         <Routes>
+            <Route
+                path='/search'
+                element={<Search/>}
+            />
             <Route
                 path='/:genre/search/:keyword'
                 element={<Genre/>}
@@ -25,6 +30,10 @@ const AppRoutes  = () => {
                 path='/'
                 exact
                 element={<Home/>}
+            />
+            <Route
+                path='/:genre/search'
+                element={<Search/>}
             />
         </Routes>
     );

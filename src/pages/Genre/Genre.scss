@@ -14,32 +14,17 @@
         margin-top: 30px;
     }
 
-    .filter {
+    .filter-container {
         display: flex;
         gap: 15px;
         align-items: center;
         position: absolute;
-        top: 110px;
+        top: 100px;
         right: 45px;
 
-        select {
-            background-color: #333;
-            color: #fff;
-            border: 1px solid #555;
-            padding: 8px 12px;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            outline: none;
-
-            &:focus {
-                outline: none;
-                border-color: white;
-            }
-
-            &:hover {
-                background-color: #444;
-            }
+        .search {
+            width: 410px;
+            margin-bottom: 20px;
         }
     }
 }
