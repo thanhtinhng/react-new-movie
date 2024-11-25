@@ -5,7 +5,7 @@ import './MovieSearch2.scss';
 
 const MovieSearch2 = props => {
     const navigate = useNavigate();
-    const { genre } = useParams(); // Lấy category từ URL params
+    const { genre } = useParams();
     const [keyword, setKeyword] = useState(props.keyword || '');
 
     const goToSearch = () => {
@@ -15,7 +15,7 @@ const MovieSearch2 = props => {
     };
 
     const handleKeyPress = (e) => {
-        if (e.keyCode === 13) {
+        if (e.code === 'Enter') {
             goToSearch();
         }
     };
@@ -29,7 +29,7 @@ const MovieSearch2 = props => {
                 onChange={(e) => setKeyword(e.target.value)}
                 onKeyUp={handleKeyPress}
             />
-            <Button className="small" onClick={goToSearch}>Tìm Kiếm</Button>
+            <Button className="small-btn" onClick={goToSearch}>Tìm Kiếm</Button>
         </div>
     );
 }

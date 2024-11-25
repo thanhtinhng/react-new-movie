@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import MovieSearch from '../../components/moviesearch/MovieSearch1';
 import './Search.scss';
 import Filter from '../../components/filter/Filter';
+
 const Search = () => {
     const { keyword, category } = useParams();
+    const navigate = useNavigate();
+
+    const handleTagClick = (tagKeyword) => {
+        navigate(`/movie/search/${tagKeyword}`);
+    };
 
     return (
         <div className="search-container">
@@ -40,12 +46,12 @@ const Search = () => {
             <div className="popular-keywords">
                 <h3>Từ Khóa Phổ Biến</h3>
                 <div className="keyword-tags">
-                    <span className="tag">Marvel</span>
-                    <span className="tag">Anime</span>
-                    <span className="tag">Netflix</span>
-                    <span className="tag">DC Comics</span>
-                    <span className="tag">Studio Ghibli</span>
-                    <span className="tag">Disney</span>
+                    <span className="tag" onClick={() => handleTagClick('Marvel')}>Marvel</span>
+                    <span className="tag" onClick={() => handleTagClick('Anime')}>Anime</span>
+                    <span className="tag" onClick={() => handleTagClick('Netflix')}>Netflix</span>
+                    <span className="tag" onClick={() => handleTagClick('DC Comics')}>DC Comics</span>
+                    <span className="tag" onClick={() => handleTagClick('Studio Ghibli')}>Studio Ghibli</span>
+                    <span className="tag" onClick={() => handleTagClick('Disney')}>Disney</span>
                 </div>
             </div>
         </div>
