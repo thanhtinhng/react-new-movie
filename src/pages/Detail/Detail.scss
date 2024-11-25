@@ -1,0 +1,138 @@
+@use '../../scss' as *;
+
+.movie-banner {
+    height: 70vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to top, $body-background, rgba(0, 0, 0, 0));
+    }
+}
+
+.detail-content {
+    position: relative;
+    top: -200px;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    max-width: 1450px;
+    margin: -190px auto 0;
+    padding: 0 30px;
+
+    &__poster {
+        flex: 1;
+
+        &__img {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 35px;
+            padding-top: 650px;
+        }
+    }
+
+    &__info {
+        position: relative;
+        width: 70%;
+        padding-left: 30px;
+
+        .title {
+            font-size: 50px;
+            line-height: 40px;
+            margin-bottom: 32px;
+        }
+
+        .genres {
+            margin-bottom: 32px;
+
+            &__item {
+                padding: 10px 25px;
+                border: 2px solid white;
+                border-radius: 15px;
+                font-size: 14px;
+                font-weight: bold;
+                background-color: rgb(37, 37, 37);
+                margin-left: 10px;
+            }
+        }
+
+        .movie-info {
+            background-color: rgba(0, 0, 0, 0.45);
+            padding: 20px;
+            border-radius: $border-radius;
+            
+            .info-item {
+                display: flex;
+                margin-bottom: 12px;
+                font-size: 16px;
+                
+                .label {
+                    color: white;
+                    margin-right: 8px;
+                    font-weight: bold;
+                    min-width: 120px;
+                }
+        
+                .value {
+                    color: $main-color;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .overview {
+            margin-bottom: 32px;
+            margin-top: 18px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+
+            .small-btn {
+                font-size: 21px;
+            }
+
+            i {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+.movieTitle {
+    color: $main-color;
+    font-weight: bold;
+}
+
+.container {
+    margin-top: 0;
+    padding-top: 0;
+
+    .trailer {
+        margin-bottom: 50px;
+    }
+}

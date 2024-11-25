@@ -45,7 +45,7 @@ const tmdbApi = {
 
     // lấy nội dung chi tiết
     detail: (cate, id, params) => {
-        const url = `${category[cate]}/${id}`;
+        const url = `${category[cate]}/${id}?language=vi`;
         return axiosClient.get(url, params);
     },
 
