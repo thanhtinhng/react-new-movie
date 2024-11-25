@@ -1,37 +1,55 @@
-// const MovieSearch = props => {
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import MovieSearch from '../../components/moviesearch/MovieSearch1';
+import './Search.scss';
+import Filter from '../../components/filter/Filter';
+const Search = () => {
+    const { keyword, category } = useParams();
 
-//     const navigate = useNavigate();
+    return (
+        <div className="search-container">
+            <div className="search-header">
+                <h2>Tìm Kiếm Phim</h2>
+                <p className="search-description">
+                    Khám phá kho phim đa dạng với hàng nghìn bộ phim hấp dẫn
+                </p>
+            </div>
 
-//     const [keyword, setKeyword] = useState(props.keyword ? props.keyword : '');
+            <MovieSearch keyword={keyword} />
 
-//     const goToSearch = useCallback(() => {
-//         if (keyword.trim().length > 0) {
-//             navigate(`/${category[props.category]}/search/${keyword}`);
-//         }
-//     }, [keyword, props.category, navigate]);
+            <Filter />
 
-//     useEffect(() => {
-//         const enterEvent = (e) => {
-//             e.preventDefault();
-//             if (e.keyCode === 13) {
-//                 goToSearch();
-//             }
-//         }
-//         document.addEventListener('keyup', enterEvent);
-//         return () => {
-//             document.removeEventListener('keyup', enterEvent);
-//         };
-//     }, [keyword, goToSearch]);
+            <div className="search-tips">
+                <h3>Gợi ý Tìm Kiếm</h3>
+                <div className="tips-content">
+                    <div className="tip-item">
+                        <h4>Theo Thể Loại</h4>
+                        <p>Hành động, Tình cảm, Kinh dị, Hoạt hình, ...</p>
+                    </div>
+                    <div className="tip-item">
+                        <h4>Theo Quốc Gia</h4>
+                        <p>Việt Nam, Hàn Quốc, Nhật Bản, Mỹ, ...</p>
+                    </div>
+                    <div className="tip-item">
+                        <h4>Theo Năm</h4>
+                        <p>2024, 2023, 2022, ...</p>
+                    </div>
+                </div>
+            </div>
 
-//     return (
-//         <div className="movie-search">
-//             {/* <Input
-//                 type="text"
-//                 placeholder="Enter keyword"
-//                 value={keyword}
-//                 onChange={(e) => setKeyword(e.target.value)}
-//             /> */}
-//             <Button className="small" onClick={goToSearch}>Search</Button>
-//         </div>
-//     )
-// }
+            <div className="popular-keywords">
+                <h3>Từ Khóa Phổ Biến</h3>
+                <div className="keyword-tags">
+                    <span className="tag">Marvel</span>
+                    <span className="tag">Anime</span>
+                    <span className="tag">Netflix</span>
+                    <span className="tag">DC Comics</span>
+                    <span className="tag">Studio Ghibli</span>
+                    <span className="tag">Disney</span>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Search;

@@ -17,6 +17,15 @@ const headerNavigation = [
   {
     display: 'Phim Bộ',
     path: '/tv'
+  },
+
+  {
+    display: (
+      <>
+        Tìm Kiếm &nbsp; <i className="fa-solid fa-magnifying-glass"></i>
+      </>
+    ),
+    path: '/search'
   }
 ]
 

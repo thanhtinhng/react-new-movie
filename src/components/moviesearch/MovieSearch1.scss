@@ -1,0 +1,55 @@
+@use '../../scss/' as *;
+
+.movie-search-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+
+    .category-select {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 32px;
+
+        .category-btn {
+            padding: 12px 26px;
+            border: 3px solid $main-color;
+            background: transparent;
+            color: white;
+            border-radius: $border-radius;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+
+            &.active {
+                background: $main-color;
+            }
+
+            &:hover {
+                background: $main-color;
+            }
+        }
+    }
+
+    .movie-search {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+    
+        input {
+            width: 100%;
+            border: 1px solid #555;
+            background-color: black;
+            padding: 15px 24px;
+            font-size: 17px;
+            border-radius: 5px;
+            color: white;
+            font-family: $font-family;
+            margin-right: 10px;
+        }
+
+        .small {
+            width: 200px;
+        }
+    }
+}
