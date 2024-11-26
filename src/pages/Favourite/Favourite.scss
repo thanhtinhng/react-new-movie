@@ -80,11 +80,13 @@
         }
 
         &__details {
-            flex: 1;
+            // flex: 1;
             
             &__row {
                 margin-bottom: 8px;
                 font-size: 18px;
+                display: grid;
+                grid-template-columns: 0.24fr 1fr;
             }
 
             &__label {
