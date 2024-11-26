@@ -64,6 +64,11 @@ const tmdbApi = {
     getGenresMovie: () => {
         const url = `genre/movie/list?language=vi`
         return axiosClient.get(url, {params: {}});
+    },
+
+    getGenresTv: () => {
+        const url = 'genre/tv/list?language=vi';
+        return axiosClient.get(url, {params: {}});
     }
 }
 

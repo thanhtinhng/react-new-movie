@@ -24,8 +24,12 @@ const Home = () => {
             </Modal>
         </div> */}
         <Carousel/>
-        <SlideList type='top_rated' category='tv' />
-        <SlideList type='top_rated' category='movie' />
+        <div className='slide-container'>
+          <SlideList type='top_rated' category='tv' />
+        </div>
+        <div className='slide-container'>
+          <SlideList type='top_rated' category='movie' />
+        </div>
     </div>
   )
 }

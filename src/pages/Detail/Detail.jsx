@@ -19,12 +19,13 @@ const Detail = () => {
       try {
         const response = await tmdbApi.detail(genre, id, { params: {} });
         setItem(response);
+        window.scrollTo(0, 30)
       } catch (error) {
         console.log(error);
       }
     }
     getDetail();
-  }, []);
+  }, [genre, id]);
 
   return (
     <>
@@ -142,9 +143,9 @@ const Detail = () => {
               </div>
             </div>
 
-            <div className="container">
+            <div className="trailer-container">
               <Trailer className='trailer' />
-            <h2 className='similar-header'>Phim Cùng Thể Loại</h2>
+              <h2 className='similar-header'>Phim Cùng Thể Loại</h2>
             </div>
             <SlideList category={genre} type="similar" id={item.id} />
           </div>
