@@ -4,9 +4,9 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import './Carousel.scss';
 import Button, { OutlineButton } from '../button/Button';
-import Modal, { ModalContent } from '../modal/Modal';
+import Modal from '../modal/Modal';
 import apiConfig from '../../api/apiConfig';
-import tmdbApi, { category, movieType } from '../../api/tmdbApi';
+import tmdbApi, { movieType } from '../../api/tmdbApi';
 import { useNavigate } from 'react-router-dom';
 import Trailer from '../trailer/Trailer';
 
@@ -58,23 +58,21 @@ const Carousel = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            {movies.map((movie, index) => (
-                <TrailerPopup key={index} movie={movie} />
-            ))}
         </div>
     );
 };
 
 const CarouselItem = props => {
     const navigate = useNavigate();
+    const movie = props.movie;
+    const genres = props.genres;
+    const genresList = props.genresList;
+    const [showModal, setShowModal] = useState(false);
+    const [showTrailer, setShowTrailer] = useState(false);
 
     const goToDetails = () => {
         navigate(`/movie/${movie.id}`);
     };
-
-    const movie = props.movie;
-    const genres = props.genres;
-    const genresList = props.genresList;
 
     const getGenreNames = () => {
         if (!genresList) {
@@ -92,12 +90,9 @@ const CarouselItem = props => {
 
     const GenreNames = getGenreNames();
 
-    const openTrailer = async () => {
-        const modal = document.querySelector(`#trailer_${movie.id}`);
-        modal.classList.add('active');
+    const openTrailer = () => {
+        setShowTrailer(true);
     };
-
-    const [showModal, setShowModal] = useState(false);
 
     return (
         <>
@@ -132,30 +127,20 @@ const CarouselItem = props => {
                     </div>
                 </div>
             </div>
-            <Modal className="modalFavourite" active={showModal}>
-                <ModalContent onClose={() => setShowModal(false)}>
-                    <h2>Thêm <span className="movieTitle">{movie.title}</span> vào danh sách yêu thích thành công.</h2>
-                </ModalContent>
+            <Modal 
+                className="modalFavourite" 
+                active={showModal} 
+                onClose={() => setShowModal(false)}
+            >
+                <h2>Thêm <span className="movieTitle">{movie.title}</span> vào danh sách yêu thích thành công.</h2>
+            </Modal>
+            <Modal 
+                active={showTrailer}
+                onClose={() => setShowTrailer(false)}
+            >
+                <Trailer genre='movie' id={movie.id}/>
             </Modal>
         </>
-    );
-};
-
-const TrailerPopup = ({ movie }) => {
-    const iframeRef = useRef(null);
-
-    const closeTrailer = () => {
-        if (iframeRef.current) {
-            iframeRef.current.src = '';
-        }
-    };
-
-    return (
-        <Modal id={`trailer_${movie.id}`} onClose={closeTrailer}>
-            <ModalContent onClose={closeTrailer}>
-                <Trailer genre='movie' id={movie.id}/>
-            </ModalContent>
-        </Modal>
     );
 };
 

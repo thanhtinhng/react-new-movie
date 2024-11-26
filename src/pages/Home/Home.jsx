@@ -11,18 +11,6 @@ const Home = () => {
 
   return (
     <div className='test'>
-      {/* Home
-      <Button>button</Button>
-      <OutlineButton>button</OutlineButton>
-      <div>
-            <button onClick={() => setShowModal(true)}>Open Modal</button>
-            <Modal id="testModal" active={showModal}>
-                <ModalContent onClose={() => setShowModal(false)}>
-                    <h1>Test Modal</h1>
-                    <p>This is a test modal content.</p>
-                </ModalContent>
-            </Modal>
-        </div> */}
         <Carousel/>
         <div className='slide-container'>
           <h2>TV Shows Được Yêu Thích</h2>

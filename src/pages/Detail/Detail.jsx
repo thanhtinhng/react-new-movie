@@ -7,7 +7,7 @@ import Cast from '../../components/cast/Cast';
 import Trailer from '../../components/trailer/Trailer';
 import SlideList from '../../components/slidelist/SlideList';
 import Button, { OutlineButton } from '../../components/button/Button';
-import Modal, { ModalContent } from '../../components/modal/Modal';
+import Modal from '../../components/modal/Modal';
 
 const Detail = () => {
   const { genre, id } = useParams();
@@ -150,10 +150,11 @@ const Detail = () => {
             <SlideList category={genre} type="similar" id={item.id} />
           </div>
 
-          <Modal active={showModal}>
-            <ModalContent onClose={() => setShowModal(false)}>
-              <h2>Thêm <span className="movieTitle">{item.title || item.name}</span> vào danh sách yêu thích thành công.</h2>
-            </ModalContent>
+          <Modal 
+            active={showModal} 
+            onClose={() => setShowModal(false)}
+          >
+            <h2>Thêm <span className="movieTitle">{item.title || item.name}</span> vào danh sách yêu thích thành công.</h2>
           </Modal>
         </>
       )}
