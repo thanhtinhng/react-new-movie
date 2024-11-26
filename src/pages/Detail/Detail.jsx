@@ -127,11 +127,11 @@ const Detail = () => {
                 <div className="action-buttons">
                   <Button className="small-btn" onClick={() => console.log('Watch clicked')}>
                     <i className="fa-regular fa-circle-play"></i>
-                    Xem phim
+                    Xem Phim
                   </Button>
                   <OutlineButton className="small-btn" onClick={() => setShowModal(true)}>
                     <i className="fa-solid fa-plus"></i>
-                    Thêm vào yêu thích
+                    Thêm Vào Yêu Thích
                   </OutlineButton>
                 </div>
 
