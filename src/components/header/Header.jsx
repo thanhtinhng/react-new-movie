@@ -27,10 +27,19 @@ const headerNavigation = [
   {
     display: (
       <>
-        Tìm Kiếm &nbsp; <i className="fa-solid fa-magnifying-glass"></i>
+        Tìm Kiếm&nbsp; <i className="fa-solid fa-magnifying-glass"></i>
       </>
     ),
     path: '/search'
+  },
+
+  {
+    display: (
+      <>
+        Tài Khoản&nbsp; <i class="fa-solid fa-user"></i>
+      </>
+    ),
+    path: '/account'
   }
 ]
 

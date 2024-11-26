@@ -13,7 +13,7 @@ const Favourite = () => {
     const [popularMovies, setPopularMovies] = useState([]);
 
     const tvIds = [209867, 94605, 1429]; // Friren, Arcane, Attack on Titan
-    const movieIds = [912649, 1184918, 533535]; // Venom, Wild Robot, Deadpool
+    const movieIds = [519182, 912649, 1184918, 533535]; // Despicable Me, Venom, Wild Robot, Deadpool
 
     useEffect(() => {
         const getDetailContent = async (id, type) => {
