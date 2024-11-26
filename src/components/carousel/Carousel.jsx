@@ -18,8 +18,14 @@ const Carousel = () => {
             try {
                 const params = { page: 1, language: 'vi' };
                 const response = await tmdbApi.getMoviesList(movieType.popular, { params });
-                const filteredMovies = response.results.filter(movie => !movie.genre_ids.includes(27)); // Loại bỏ phim kinh dị
-                setMovies(filteredMovies.slice(0, 5)); // Lấy tối đa 5 phim
+                // Lọc bỏ phim kinh dị và phim người lớn
+                const filteredMovies = response.results.filter(movie => {
+                    const isNotHorror = !movie.genre_ids.includes(27);  // 27 là id thể loại kinh dị
+                    const isNotAdult = !movie.adult;
+                    return isNotHorror && isNotAdult;
+                });
+
+                setMovies(filteredMovies.slice(0, 7)); // Lấy tối đa 7 phim
             } catch (error) {
                 console.error(error);
             }
