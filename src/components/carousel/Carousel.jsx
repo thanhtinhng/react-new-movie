@@ -60,7 +60,7 @@ const Carousel = () => {
                     <Swiper
                         modules={[Autoplay]}
                         grabCursor={true}
-                        autoplay={{ delay: 20000, disableOnInteraction: false }}
+                        autoplay={{ delay: 8000, disableOnInteraction: false }}
                     >
                         {movies.map((movie, index) => (
                             <SwiperSlide key={index}>

@@ -8,11 +8,18 @@ import Trailer from '../../components/trailer/Trailer';
 import SlideList from '../../components/slidelist/SlideList';
 import Button, { OutlineButton } from '../../components/button/Button';
 import Modal from '../../components/modal/Modal';
+import { useNavigate } from 'react-router-dom';
 
 const Detail = () => {
   const { genre, id } = useParams();
   const [item, setItem] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
+  const navigate = useNavigate();
+
+  const goToWatch = () => {
+    navigate(`/${genre}/${id}/watch`);
+  };
 
   useEffect(() => {
     const getDetail = async () => {
@@ -125,7 +132,7 @@ const Detail = () => {
 
 
                 <div className="action-buttons">
-                  <Button className="small-btn" onClick={() => console.log('Watch clicked')}>
+                  <Button className="small-btn" onClick={goToWatch}>
                     <i className="fa-regular fa-circle-play"></i>
                     Xem Phim
                   </Button>
@@ -150,8 +157,8 @@ const Detail = () => {
             <SlideList category={genre} type="similar" id={item.id} />
           </div>
 
-          <Modal 
-            active={showModal} 
+          <Modal
+            active={showModal}
             onClose={() => setShowModal(false)}
           >
             <h2>Thêm <span className="movieTitle">{item.title || item.name}</span> vào danh sách yêu thích thành công.</h2>
