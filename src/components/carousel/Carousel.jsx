@@ -14,6 +14,16 @@ const Carousel = () => {
     const [movies, setMovies] = useState([]);
     const [genresList, setGenresList] = useState([]);
 
+    const [showModal, setShowModal] = useState(false);
+    const [showTrailer, setShowTrailer] = useState(false);
+    const [selectedMovie, setSelectedMovie] = useState(null);
+
+    // Reset trailer state khi đóng modal
+    const handleCloseTrailer = () => {
+        setShowTrailer(false);
+        setSelectedMovie(null); // Reset selected movie
+    };
+
     useEffect(() => {
         const fetchMovies = async () => {
             try {
@@ -44,21 +54,55 @@ const Carousel = () => {
     }, []);
 
     return (
-        <div className="carousel">
-            <Swiper
-                modules={[Autoplay]}
-                grabCursor={true}
-                autoplay={{ delay: 20000, disableOnInteraction: false }}
-            >
-                {movies.map((movie, index) => (
-                    <SwiperSlide key={index}>
-                        {({ isActive }) => (
-                            <CarouselItem genresList={genresList} genres={movie.genre_ids} movie={movie} className={`${isActive ? 'active' : ''}`} />
-                        )}
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </div>
+        <>
+            <div className="carousel-container">
+                <div className="carousel">
+                    <Swiper
+                        modules={[Autoplay]}
+                        grabCursor={true}
+                        autoplay={{ delay: 20000, disableOnInteraction: false }}
+                    >
+                        {movies.map((movie, index) => (
+                            <SwiperSlide key={index}>
+                                {({ isActive }) => (
+                                    <CarouselItem
+                                        genresList={genresList}
+                                        genres={movie.genre_ids}
+                                        movie={movie}
+                                        className={`${isActive ? 'active' : ''}`}
+                                        onShowModal={() => {
+                                            setSelectedMovie(movie);
+                                            setShowModal(true);
+                                        }}
+                                        onShowTrailer={() => {
+                                            setSelectedMovie(movie);
+                                            setShowTrailer(true);
+                                        }} />
+                                )}
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+                {selectedMovie && (
+                    <>
+                        <Modal
+                            className="modalFavourite"
+                            active={showModal}
+                            onClose={() => setShowModal(false)}
+                        >
+                            <h2>Thêm <span className="movieTitle">{selectedMovie.title}</span> vào danh sách yêu thích thành công.</h2>
+                        </Modal>
+
+                        <Modal
+                            active={showTrailer}
+                            onClose={handleCloseTrailer}
+                        >
+                            <Trailer key={selectedMovie.id} genre='movie' id={selectedMovie.id} />
+                        </Modal>
+                    </>
+                )}
+            </div>
+        </>
     );
 };
 
@@ -67,8 +111,6 @@ const CarouselItem = props => {
     const movie = props.movie;
     const genres = props.genres;
     const genresList = props.genresList;
-    const [showModal, setShowModal] = useState(false);
-    const [showTrailer, setShowTrailer] = useState(false);
 
     const goToDetails = () => {
         navigate(`/movie/${movie.id}`);
@@ -89,10 +131,6 @@ const CarouselItem = props => {
     };
 
     const GenreNames = getGenreNames();
-
-    const openTrailer = () => {
-        setShowTrailer(true);
-    };
 
     return (
         <>
@@ -121,25 +159,13 @@ const CarouselItem = props => {
                         <p className="description">{movie.overview}</p>
                         <div className="btns">
                             <Button onClick={goToDetails} className="watch-btn" ><i class="fa-regular fa-circle-play"></i>Xem phim</Button>
-                            <OutlineButton onClick={openTrailer}>Trailer</OutlineButton>
-                            <OutlineButton onClick={() => setShowModal(true)}>+</OutlineButton>
+                            <OutlineButton onClick={props.onShowTrailer}>Trailer</OutlineButton>
+                            <OutlineButton onClick={props.onShowModal}>+</OutlineButton>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <Modal 
-                className="modalFavourite" 
-                active={showModal} 
-                onClose={() => setShowModal(false)}
-            >
-                <h2>Thêm <span className="movieTitle">{movie.title}</span> vào danh sách yêu thích thành công.</h2>
-            </Modal>
-            <Modal 
-                active={showTrailer}
-                onClose={() => setShowTrailer(false)}
-            >
-                <Trailer genre='movie' id={movie.id}/>
-            </Modal>
         </>
     );
 };
