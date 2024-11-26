@@ -8,6 +8,7 @@ import Detail from '../pages/Detail/Detail';
 import Search from '../pages/Search/Search';
 import Favourite from '../pages/Favourite/Favourite';
 import Account from '../pages/Account/Account';
+import Watch from '../pages/Watch/Watch'
 
 const AppRoutes  = () => {
     return (
@@ -44,6 +45,10 @@ const AppRoutes  = () => {
             <Route
                 path='/account'
                 element={<Account/>}
+            />
+            <Route
+                path='/:genre/:id/watch'
+                element={<Watch/>}
             />
         </Routes>
     );
