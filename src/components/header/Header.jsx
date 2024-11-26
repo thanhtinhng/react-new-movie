@@ -20,6 +20,11 @@ const headerNavigation = [
   },
 
   {
+    display: 'Yêu Thích',
+    path: '/favourite'
+  },
+
+  {
     display: (
       <>
         Tìm Kiếm &nbsp; <i className="fa-solid fa-magnifying-glass"></i>

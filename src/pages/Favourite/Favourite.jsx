@@ -134,7 +134,7 @@ const Favourite = () => {
                             </p>
                         </>
                     )}
-                    
+
                 </div>
                 <div className="favourite-item__content__actions">
                     <Link to={`/${type}/${item.id}`}>
@@ -145,7 +145,7 @@ const Favourite = () => {
                     </Link>
                     <OutlineButton onClick={() => handleRemoveFromFavourites(item.id, type)}
                         className="favourite-item__content__actions__remove-btn">
-                        <i className="fa-solid fa-trash"></i>
+                        <i class="fa-solid fa-trash-can"></i>
                         Xóa
                     </OutlineButton>
                 </div>
