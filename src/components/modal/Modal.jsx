@@ -33,16 +33,7 @@ const Modal = (props) => {
         </div>
     );
 };
-
-Modal.propTypes = {
-    active: PropTypes.bool,
-    id: PropTypes.string,
-    onClose: PropTypes.func,
-};
-
-
 // Component con ModalContent
-// Chứa nội dung và logic để đóng modal
 export const ModalContent = forwardRef((props, ref) => {
     // Tạo một ref để tham chiếu đến phần tử nội dung modal
     const contentRef = useRef(null);
@@ -66,18 +57,8 @@ export const ModalContent = forwardRef((props, ref) => {
             onClick={(e) => e.stopPropagation()}
         >
             {props.children}
-            <div
-                className="modal__content__close" // Nút đóng modal
-                onClick={closeModal}
-            >
-                <i className="bx bx-x"></i>
-            </div>
         </div>
     );
 });
-
-ModalContent.propTypes = {
-    onClose: PropTypes.func
-};
 
 export default Modal;

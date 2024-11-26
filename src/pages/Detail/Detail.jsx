@@ -144,7 +144,7 @@ const Detail = () => {
             </div>
 
             <div className="trailer-container">
-              <Trailer className='trailer' />
+              <Trailer className='trailer' />setShowModalr
               <h2 className='similar-header'>Phim Cùng Thể Loại</h2>
             </div>
             <SlideList category={genre} type="similar" id={item.id} />

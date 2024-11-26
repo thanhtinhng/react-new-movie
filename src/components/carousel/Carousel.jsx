@@ -8,6 +8,7 @@ import Modal, { ModalContent } from '../modal/Modal';
 import apiConfig from '../../api/apiConfig';
 import tmdbApi, { category, movieType } from '../../api/tmdbApi';
 import { useNavigate } from 'react-router-dom';
+import Trailer from '../trailer/Trailer';
 
 const Carousel = () => {
     const [movies, setMovies] = useState([]);
@@ -93,15 +94,6 @@ const CarouselItem = props => {
 
     const openTrailer = async () => {
         const modal = document.querySelector(`#trailer_${movie.id}`);
-        const videos = await tmdbApi.getVideos(category.movie, movie.id);
-        const iframe = modal.querySelector('iframe');
-
-        if (videos.results.length) {
-            iframe.src = `https://www.youtube.com/embed/${videos.results[0].key}`;
-        } else {
-            modal.querySelector('.modal__content').innerText = 'Trailer not available.';
-        }
-
         modal.classList.add('active');
     };
 
@@ -161,12 +153,7 @@ const TrailerPopup = ({ movie }) => {
     return (
         <Modal id={`trailer_${movie.id}`} onClose={closeTrailer}>
             <ModalContent onClose={closeTrailer}>
-                <iframe
-                    ref={iframeRef}
-                    width="100%"
-                    height="500"
-                    title="Trailer"
-                ></iframe>
+                <Trailer genre='movie' id={movie.id}/>
             </ModalContent>
         </Modal>
     );
