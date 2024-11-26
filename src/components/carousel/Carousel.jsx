@@ -127,7 +127,7 @@ const CarouselItem = props => {
                     <div className="carousel__item__content__info">
                         <h2 className="title">{movie.title}</h2>
                         <div className="genres">
-                            {GenreNames && GenreNames.slice(0, 5).map((genre, i) => (
+                            {GenreNames && GenreNames.slice(0, 4).map((genre, i) => (
                                 <span key={i} className="genres__item">{genre}</span>
                             ))}
                         </div>
