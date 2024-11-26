@@ -3,9 +3,15 @@ import { useParams } from 'react-router';
 import tmdbApi from '../../api/tmdbApi';
 import './Trailer.scss';
 
-const Trailer = () => {
+const Trailer = props => {
 
-    const { genre, id } = useParams();
+    var { genre, id } = useParams();
+
+    if (props.genre && props.id) {
+        genre = props.genre;
+        id = props.id;
+    }
+
     const [trailer, setTrailer] = useState(null);
 
     useEffect(() => {
@@ -17,7 +23,7 @@ const Trailer = () => {
                 if (response.results.length > 0) {
                     setTrailer(response.results[0]);
                 }
-                
+
             } catch (error) {
                 console.log(error);
             }
@@ -31,7 +37,7 @@ const Trailer = () => {
 };
 
 const TrailerVideo = ({ trailer }) => {
-    
+
     const iframeRef = useRef(null);
 
     // tỷ lệ khung hình 16:9

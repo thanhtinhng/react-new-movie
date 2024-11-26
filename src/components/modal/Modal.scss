@@ -21,23 +21,11 @@
     &__content {
         padding: 32px;
         background-color: $body-background;
-        width: 50%;
+        width: fit-content;
         opacity: 0;
         transform: translateY(-250px);
         transition: transform 0.6s ease, opacity 0.6s ease;
         position: relative;
-
-        &__close {
-            position: absolute;
-            right: 5px;
-            top: 5px;
-            font-size: 24px;
-            cursor: pointer;
-
-            &:hover {
-                color: $main-color;
-            }
-        }
     }
 
     &.active &__content {

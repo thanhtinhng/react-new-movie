@@ -2,6 +2,26 @@
 
 .carousel {
     margin-bottom: 48px;
+
+    .trailer {
+        padding: 0;
+
+        margin: 0 auto;
+
+        .trailer__title {
+            display: none;
+        }
+
+        iframe {
+            width: 950px;
+            height: 657px;
+        }
+    }
+
+    Modal {
+        width: fit-content;
+    }
+
 }
 
 .carousel__item {
@@ -67,7 +87,7 @@
 
             .genres {
                 margin-bottom: 32px;
-    
+
                 &__item {
                     padding: 10px 25px;
                     border: 2px solid white;
@@ -101,7 +121,10 @@
                 padding-left: 45px;
             }
 
-            .btns, .title, .description, .genres {
+            .btns,
+            .title,
+            .description,
+            .genres {
                 opacity: 0;
                 transform: translateY(-100px);
                 transition: transform 0.5s ease, opacity 0.5s ease;
@@ -111,14 +134,18 @@
 
     }
 
-    &.active > &__content > &__content__poster {
+    &.active>&__content>&__content__poster {
         img {
             transform: scale(1);
         }
     }
 
-    &.active > &__content > &__content__info {
-        .btns, .title, .description, .genres {
+    &.active>&__content>&__content__info {
+
+        .btns,
+        .title,
+        .description,
+        .genres {
             transform: translateY(0);
             opacity: 1;
         }
