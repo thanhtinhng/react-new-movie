@@ -13,8 +13,13 @@ const Card = props => {
 
     const bg = apiConfig.w500Image(movie.poster_path || movie.backdrop_path);
 
+    const handleClick = (e) => {
+        e.preventDefault();
+        window.location.href = uri;
+    }
+
     return (
-        <Link to={uri} draggable="false">
+        <Link draggable="false" onClick={handleClick}>
             <div className="card" style={{backgroundImage: `url(${bg})`}}>
                 <Button>
                     <i className="fa-regular fa-circle-play"></i>

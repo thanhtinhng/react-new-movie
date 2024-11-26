@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Carousel = () => {
     const [movies, setMovies] = useState([]);
+    const [genresList, setGenresList] = useState([]);
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -23,7 +24,16 @@ const Carousel = () => {
                 console.error(error);
             }
         };
+        const getGenres = async () => {
+            try {
+                const response = await tmdbApi.getGenresMovie(); // Sử dụng method mới
+                setGenresList(response.genres);
+            } catch (error) {
+                console.error(error);
+            }
+        };
         fetchMovies();
+        getGenres();
     }, []);
 
     return (
@@ -36,7 +46,7 @@ const Carousel = () => {
                 {movies.map((movie, index) => (
                     <SwiperSlide key={index}>
                         {({ isActive }) => (
-                            <CarouselItem movie={movie} className={`${isActive ? 'active' : ''}`} />
+                            <CarouselItem genresList={genresList} genres={movie.genre_ids} movie={movie} className={`${isActive ? 'active' : ''}`} />
                         )}
                     </SwiperSlide>
                 ))}
@@ -56,6 +66,24 @@ const CarouselItem = props => {
     };
 
     const movie = props.movie;
+    const genres = props.genres;
+    const genresList = props.genresList;
+
+    const getGenreNames = () => {
+        if (!genresList) {
+            return [];
+        }
+        const genreNames = [];
+        genres.forEach(genreId => {
+            const genre = genresList.find(item => item.id === genreId);
+            if (genre) {
+                genreNames.push(genre.name);
+            }
+        });
+        return genreNames;
+    };
+
+    const GenreNames = getGenreNames();
 
     const openTrailer = async () => {
         const modal = document.querySelector(`#trailer_${movie.id}`);
@@ -92,6 +120,11 @@ const CarouselItem = props => {
                     </div>
                     <div className="carousel__item__content__info">
                         <h2 className="title">{movie.title}</h2>
+                        <div className="genres">
+                            {GenreNames && GenreNames.slice(0, 5).map((genre, i) => (
+                                <span key={i} className="genres__item">{genre}</span>
+                            ))}
+                        </div>
                         <p className="description">{movie.overview}</p>
                         <div className="btns">
                             <Button onClick={goToDetails} className="watch-btn" ><i class="fa-regular fa-circle-play"></i>Xem phim</Button>
