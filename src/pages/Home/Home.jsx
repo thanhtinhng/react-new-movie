@@ -25,9 +25,11 @@ const Home = () => {
         </div> */}
         <Carousel/>
         <div className='slide-container'>
+          <h2>TV Shows Được Yêu Thích</h2>
           <SlideList type='top_rated' category='tv' />
         </div>
         <div className='slide-container'>
+          <h2>Phim Lẻ Được Yêu Thích</h2>
           <SlideList type='top_rated' category='movie' />
         </div>
     </div>
