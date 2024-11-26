@@ -6,6 +6,7 @@ import Home from '../pages/Home/Home';
 import Genre from '../pages/Genre/Genre';
 import Detail from '../pages/Detail/Detail';
 import Search from '../pages/Search/Search';
+import Favourite from '../pages/Favourite/Favourite';
 
 const AppRoutes  = () => {
     return (
@@ -34,6 +35,10 @@ const AppRoutes  = () => {
             <Route
                 path='/:genre/search'
                 element={<Search/>}
+            />
+            <Route
+                path='/favourite'
+                element={<Favourite/>}
             />
         </Routes>
     );

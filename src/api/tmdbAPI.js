@@ -57,7 +57,7 @@ const tmdbApi = {
 
     // lấy danh sách phim hoặc chương trình truyền hình tương tự
     similar: (cate, id) => {
-        const url = `${category[cate]}/${id}/similar`;
+        const url = `${category[cate]}/${id}/similar?language=vi`;
         return axiosClient.get(url, {params: {}});
     },
 

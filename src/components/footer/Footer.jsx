@@ -48,7 +48,9 @@ const Footer = () => {
           <p>© Copyright NewMovies.net</p>
           <div>
             <img src={youtube} alt="YouTube" className="img-link" />
-            <img src={facebook} alt="Facebook" className="img-link" />
+            <a href="https://www.facebook.com/thanhtinh.nguyen.5439087/" target="_blank" rel="noopener noreferrer">
+              <img src={facebook} alt="Facebook" className="img-link" />
+            </a>
             <img src={ins} alt="Instagram" className="img-link" />
           </div>
         </div>
