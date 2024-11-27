@@ -17,6 +17,8 @@ const Grid = (props) => {
 
     const { keyword } = useParams();
 
+    const limit = props.limit || 20;
+
     const fetchMovies = async (currentPage = 1) => {
         let response = null;
         if (keyword === undefined) {
@@ -39,8 +41,8 @@ const Grid = (props) => {
             };
             response = await tmdbApi.search(props.category, { params });
         }
-
-        setMovies(response.results);
+        const limitedResults = response.results.slice(0, limit);
+        setMovies(limitedResults);
         setTotalPages(response.total_pages);
         setPage(currentPage);
     };
