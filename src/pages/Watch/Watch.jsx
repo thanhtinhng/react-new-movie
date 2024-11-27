@@ -196,7 +196,7 @@ const Watch = () => {
                             {/* Similar Movies Grid */}
                             <div className="similar-movies">
                                 <h2>Phim Đề Xuất</h2>
-                                <Grid category={genre} />
+                                <Grid category={genre} limit={6}/>
                             </div>
                         </div>
                     </div>
