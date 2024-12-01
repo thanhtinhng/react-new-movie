@@ -25,22 +25,22 @@ const Footer = () => {
             <div className="footer__content__col__item-container">
               <Link to="/" className="footer__content__col__item-container__item">Trang chủ</Link>
               <Link to="/contact" className="footer__content__col__item-container__item">Liên hệ</Link>
-              <Link to="/terms" className="footer__content__col__item-container__item">Điều khoản dịch vụ</Link>
+              <Link to="/" className="footer__content__col__item-container__item">Điều khoản dịch vụ</Link>
               <Link to="/about" className="footer__content__col__item-container__item">Giới thiệu</Link>
             </div>
           </div>
           <div className="footer__content__col">
             <div className="footer__content__col__item-container">
-              <Link to="/faq" className="footer__content__col__item-container__item">FAQ</Link>
-              <Link to="/upgrade" className="footer__content__col__item-container__item">Nâng cấp tài khoản</Link>
+              <Link to="/" className="footer__content__col__item-container__item">FAQ</Link>
+              <Link to="/" className="footer__content__col__item-container__item">Nâng cấp tài khoản</Link>
               <Link to="/privacy" className="footer__content__col__item-container__item">Chính sách bảo mật</Link>
             </div>
           </div>
           <div className="footer__content__col footer__content__col-4">
             <div className="footer__content__col__item-container">
-              <Link to="/recommended" className="footer__content__col__item-container__item">Nên xem</Link>
-              <Link to="/new" className="footer__content__col__item-container__item">Mới ra mắt</Link>
-              <Link to="/ranking" className="footer__content__col__item-container__item">Bảng xếp hạng</Link>
+              <Link to="/movie" className="footer__content__col__item-container__item">Nên xem</Link>
+              <Link to="/movie" className="footer__content__col__item-container__item">Mới ra mắt</Link>
+              <Link to="/movie" className="footer__content__col__item-container__item">Bảng xếp hạng</Link>
             </div>
           </div>
         </div>
