@@ -44,30 +44,35 @@ const headerNavigation = [
 ]
 
 const Header = () => {
-
   const { pathname } = useLocation();
 
-  const isActive = headerNavigation.findIndex(nav => nav.path === pathname);
+  // Kiểm tra xem menu item nào đang active dựa vào current path
+  const getActiveMenuIndex = (currentPath) => {
+    return headerNavigation.findIndex(menuItem => menuItem.path === currentPath);
+  };
+
+  // Lấy index của menu item đang active
+  const activeMenuIndex = getActiveMenuIndex(pathname);
 
   return (
     <div className="header">
       <div className="header__wrap">
-
         <div className="logo">
           <img src={logo} alt="logo" id="logo" />
           <Link to='/'>NewMovies</Link>
         </div>
 
         <ul className="header__navigation">
-          {headerNavigation.map((nav, i) => {
-            return (
-              <li key={i} className={`${i === isActive ? 'active' : ''}`}>
-                <Link to={nav.path}>
-                  {nav.display}
-                </Link>
-              </li>
-            )
-          })}
+          {headerNavigation.map((menuItem, index) => (
+            <li 
+              key={index} 
+              className={index === activeMenuIndex ? 'active' : ''}
+            >
+              <Link to={menuItem.path}>
+                {menuItem.display}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

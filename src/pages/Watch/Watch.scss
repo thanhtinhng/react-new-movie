@@ -58,6 +58,11 @@
                         &:hover {
                             background-color: $main-color;
                         }
+
+                        &.active {
+                            background-color: $main-color;
+                            transform: scale(1.05);
+                        }
                     }
                 }
             }
@@ -177,15 +182,19 @@
                         color: white;
                         border-radius: 5px;
                         cursor: pointer;
-                        transition: background-color 0.3s ease;
+                        transition: all 0.3s ease;
                         font-size: 18px;
-
-                        &:hover {
-                            background-color: $main-color;
-                        }
 
                         i {
                             margin-right: 5px;
+                        }
+
+                        &.like-btn.active {
+                            background-color: $main-color;
+                        }
+
+                        &.dislike-btn.active {
+                            background-color: #dc3545;
                         }
                     }
                 }

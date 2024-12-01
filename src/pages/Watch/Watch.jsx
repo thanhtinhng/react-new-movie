@@ -13,6 +13,9 @@ const Watch = () => {
     const [item, setItem] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [lightsOff, setLightsOff] = useState(false);
+    const [activeEpisode, setActiveEpisode] = useState(1);
+    const [activeServer, setActiveServer] = useState('MegaCloud');
+    const [likeStatus, setLikeStatus] = useState(null);
 
     useEffect(() => {
         const getDetail = async () => {
@@ -47,6 +50,25 @@ const Watch = () => {
         },
     ];
 
+    const handleScrollTo = (elementId) => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            // getBoundingClientRect là khoảng cách từ phần tử đến đầu viewport (màn hình hiển thị)
+            // window.scrollY là khoảng cách đã cuộn từ đầu trang
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: elementPosition - 100,
+                behavior: 'smooth'
+            });
+        }
+    };
+    
+    // Nếu click vào nút đang active -> reset về null
+    // Nếu click vào nút khác -> set trạng thái mới
+    const handleLikeClick = (status) => {
+        setLikeStatus(likeStatus === status ? null : status);
+    };
+
     return (
         <>
             <div className={`watch-container ${lightsOff ? 'lights-off' : ''}`}>
@@ -61,13 +83,21 @@ const Watch = () => {
                                     <div className="list">
                                         {genre === 'tv' ? (
                                             episodes.map((ep) => (
-                                                <button key={ep} className="episode-btn">
+                                                <button 
+                                                    key={ep} 
+                                                    className={`episode-btn ${activeEpisode === ep ? 'active' : ''}`}
+                                                    onClick={() => setActiveEpisode(ep)}
+                                                >
                                                     Tập {ep}
                                                 </button>
                                             ))
                                         ) : (
                                             servers.map((server) => (
-                                                <button key={server} className="server-btn">
+                                                <button 
+                                                    key={server} 
+                                                    className={`server-btn ${activeServer === server ? 'active' : ''}`}
+                                                    onClick={() => setActiveServer(server)}
+                                                >
                                                     {server}
                                                 </button>
                                             ))
@@ -81,7 +111,7 @@ const Watch = () => {
                                     <button onClick={() => setLightsOff(!lightsOff)}>
                                         <i className="fa-solid fa-lightbulb"></i> {lightsOff ? 'Bật Đèn' : 'Tắt Đèn'}
                                     </button>
-                                    <button>
+                                    <button onClick={() => handleScrollTo('comments-section')}>
                                         <i className="fa-solid fa-comment"></i> Bình Luận
                                     </button>
                                 </div>
@@ -109,8 +139,18 @@ const Watch = () => {
                                                     alt={item.title || item.name}
                                                 />
                                                 <div className="rating-buttons">
-                                                    <button><i className="fa-solid fa-thumbs-up"></i> 1.2K</button>
-                                                    <button><i className="fa-solid fa-thumbs-down"></i> 123</button>
+                                                    <button 
+                                                        className={`like-btn ${likeStatus === 'like' ? 'active' : ''}`}
+                                                        onClick={() => handleLikeClick('like')}
+                                                    >
+                                                        <i className="fa-solid fa-thumbs-up"></i> 1.2K
+                                                    </button>
+                                                    <button 
+                                                        className={`dislike-btn ${likeStatus === 'dislike' ? 'active' : ''}`}
+                                                        onClick={() => handleLikeClick('dislike')}
+                                                    >
+                                                        <i className="fa-solid fa-thumbs-down"></i> 123
+                                                    </button>
                                                 </div>
                                             </div>
 
@@ -168,7 +208,7 @@ const Watch = () => {
                                         </div>
 
                                         {/* Comments Section */}
-                                        <div className="comments-section">
+                                        <div className="comments-section" id="comments-section">
                                             <h3>Bình Luận</h3>
                                             <div className="comment-input">
                                                 <input type="text" placeholder="Viết bình luận..." />
