@@ -9,6 +9,8 @@ import Search from '../pages/Search/Search';
 import Favourite from '../pages/Favourite/Favourite';
 import Account from '../pages/Account/Account';
 import Watch from '../pages/Watch/Watch'
+import Login from '../pages/Login/Login'
+import Register from '../pages/Register/Register'
 
 const AppRoutes  = () => {
     return (
@@ -49,6 +51,14 @@ const AppRoutes  = () => {
             <Route
                 path='/:genre/:id/watch'
                 element={<Watch/>}
+            />
+            <Route
+                path='/login'
+                element={<Login/>}
+            />
+            <Route
+                path='/register'
+                element={<Register/>}
             />
         </Routes>
     );
