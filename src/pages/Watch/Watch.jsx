@@ -92,7 +92,7 @@ const Watch = () => {
                         <div className="share-bar">
                             <span>Chia sẻ: </span>
                             <button className="facebook"><i className="fab fa-facebook-f"></i></button>
-                            <button className="twitter"><i className="fab fa-twitter"></i></button>
+                            <button className="x"><i class="fa-brands fa-x-twitter"></i></button>
                             <button className="telegram"><i className="fab fa-telegram-plane"></i></button>
                             <button className="line"><i className="fab fa-line"></i></button>
                         </div>
