@@ -1,1 +1,166 @@
 @use '../../scss/' as *;
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+
+  &__form {
+    width: 40%;
+    background-color: lighten($body-background, 5%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+
+    &__title {
+      text-align: center;
+      margin-bottom: 30px;
+      color: $main-color;
+      font-size: 28px;
+    }
+
+    &__group {
+      margin-bottom: 20px;
+    }
+
+    &__label {
+      display: block;
+      margin-bottom: 8px;
+      color: $text-color;
+      font-size: 16px;
+    }
+
+    &__input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid rgba($text-color, 0.2);
+      border-radius: 8px;
+      background-color: rgba($body-background, 0.8);
+      color: $text-color;
+      font-family: $font-family;
+      font-size: 16px;
+
+      &:focus {
+        outline: none;
+        border-color: $main-color;
+      }
+    }
+
+    &__options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &__remember {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: $text-color;
+      cursor: pointer;
+      font-size: 16px;
+
+      &__checkbox {
+        cursor: pointer;
+      }
+    }
+
+    &__forgot {
+      color: $main-color;
+      text-decoration: none;
+      font-size: 16px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__submit {
+      width: 100%;
+      padding: 15px;
+      background-color: $main-color;
+      color: $text-color;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+
+      &:hover {
+        background-color: darken($main-color, 10%);
+      }
+    }
+
+    &__register-link {
+      text-align: center;
+      margin: 20px 0;
+      color: $text-color;
+      font-size: 16px;
+
+      a {
+        color: $main-color;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__social {
+      text-align: center;
+      margin-top: 30px;
+
+      &__text {
+        color: $text-color;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      &__buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 16px;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: $box-shadow;
+        }
+
+        &--google {
+          background-color: #fff;
+          color: #000;
+        }
+
+        &--facebook {
+          background-color: #1877f2;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
