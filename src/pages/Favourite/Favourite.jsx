@@ -14,6 +14,9 @@ const Favourite = () => {
 
     const tvIds = [209867, 94605, 1429]; // Friren, Arcane, Attack on Titan
     const movieIds = [519182, 912649, 1184918, 533535]; // Despicable Me, Venom, Wild Robot, Deadpool
+    
+    // Mảng chứa ID các phim cần loại bỏ
+    const excludedMovieIds = [179387];
 
     useEffect(() => {
         const getDetailContent = async (id, type) => {
@@ -49,7 +52,11 @@ const Favourite = () => {
                         language: 'vi'
                     }
                 });
-                setPopularMovies(response.results.slice(0, 6));
+                // Lọc bỏ các phim trong danh sách loại trừ
+                const filteredMovies = response.results.filter(movie => 
+                    !excludedMovieIds.includes(movie.id)
+                );
+                setPopularMovies(filteredMovies.slice(0, 6));
             } catch (error) {
                 console.log(error);
             }

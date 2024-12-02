@@ -19,6 +19,9 @@ const Grid = (props) => {
 
     const limit = props.limit || 20;
 
+    // Mảng chứa ID các phim cần loại bỏ
+    const excludedMovieIds = [179387];
+
     const fetchMovies = async (currentPage = 1) => {
         let response = null;
         if (keyword === undefined) {
@@ -41,7 +44,13 @@ const Grid = (props) => {
             };
             response = await tmdbApi.search(props.category, { params });
         }
-        const limitedResults = response.results.slice(0, limit);
+        
+        // Lọc bỏ các phim trong danh sách loại trừ
+        const filteredResults = response.results.filter(movie => 
+            !excludedMovieIds.includes(movie.id)
+        );
+        
+        const limitedResults = filteredResults.slice(0, limit);
         setMovies(limitedResults);
         setTotalPages(response.total_pages);
         setPage(currentPage);
