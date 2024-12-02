@@ -11,6 +11,7 @@ import Account from '../pages/Account/Account';
 import Watch from '../pages/Watch/Watch'
 import Login from '../pages/Login/Login'
 import Register from '../pages/Register/Register'
+import Contact from '../pages/Contact/Contact'
 
 const AppRoutes  = () => {
     return (
@@ -59,6 +60,10 @@ const AppRoutes  = () => {
             <Route
                 path='/register'
                 element={<Register/>}
+                />
+            <Route
+                path='/contact'
+                element={<Contact/>}
             />
         </Routes>
     );

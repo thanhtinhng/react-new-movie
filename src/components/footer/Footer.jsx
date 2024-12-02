@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="footer__content__col">
             <div className="footer__content__col__item-container">
               <Link to="/" className="footer__content__col__item-container__item">Trang chủ</Link>
-              <Link to="/contact" className="footer__content__col__item-container__item">Liên hệ</Link>
+              <Link to="/contact" className="footer__content__col__item-container__item">Liên hệ góp ý</Link>
               <Link to="/" className="footer__content__col__item-container__item">Điều khoản dịch vụ</Link>
               <Link to="/about" className="footer__content__col__item-container__item">Giới thiệu</Link>
             </div>
@@ -34,6 +34,7 @@ const Footer = () => {
               <Link to="/" className="footer__content__col__item-container__item">FAQ</Link>
               <Link to="/" className="footer__content__col__item-container__item">Nâng cấp tài khoản</Link>
               <Link to="/privacy" className="footer__content__col__item-container__item">Chính sách bảo mật</Link>
+              <Link to="/login" className="footer__content__col__item-container__item">Đăng nhập</Link>
             </div>
           </div>
           <div className="footer__content__col footer__content__col-4">
