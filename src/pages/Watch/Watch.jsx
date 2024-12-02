@@ -14,7 +14,7 @@ const Watch = () => {
     const [showModal, setShowModal] = useState(false);
     const [lightsOff, setLightsOff] = useState(false);
     const [activeEpisode, setActiveEpisode] = useState(1);
-    const [activeServer, setActiveServer] = useState('MegaCloud');
+    const [activePart, setActivePart] = useState('MegaCloud');
     const [likeStatus, setLikeStatus] = useState(null);
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const Watch = () => {
     }, [genre, id]);
 
     const episodes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const servers = ['MegaCloud', 'UpCloud', 'GoogleCloud'];
+    const parts = ['Full', 'Phần 1', 'Phần 2', 'Phần 3', 'Phần 4'];
     const comments = [
         {
             user: 'Nguyễn Thành Tính',
@@ -79,7 +79,7 @@ const Watch = () => {
                             <div className="video-container">
                                 <Trailer />
                                 <div className="server-episodes">
-                                    <h3>{genre === 'tv' ? 'Danh Sách Tập' : 'Chọn Server'}</h3>
+                                    <h3>{genre === 'tv' ? 'Danh Sách Tập' : 'Chọn Phần'}</h3>
                                     <div className="list">
                                         {genre === 'tv' ? (
                                             episodes.map((ep) => (
@@ -92,13 +92,13 @@ const Watch = () => {
                                                 </button>
                                             ))
                                         ) : (
-                                            servers.map((server) => (
+                                            parts.map((part) => (
                                                 <button 
-                                                    key={server} 
-                                                    className={`server-btn ${activeServer === server ? 'active' : ''}`}
-                                                    onClick={() => setActiveServer(server)}
+                                                    key={part} 
+                                                    className={`server-btn ${activePart === part ? 'active' : ''}`}
+                                                    onClick={() => setActivePart(part)}
                                                 >
-                                                    {server}
+                                                    {part}
                                                 </button>
                                             ))
                                         )}
