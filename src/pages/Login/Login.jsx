@@ -58,7 +58,7 @@ const Login = () => {
             />
             Ghi nhớ đăng nhập
           </label>
-          <Link to="/forgot-password" className="login__form__forgot">Quên mật khẩu?</Link>
+          <Link to="/" className="login__form__forgot">Quên mật khẩu?</Link>
         </div>
 
         <button type="submit" className="login__form__submit">Đăng Nhập</button>
