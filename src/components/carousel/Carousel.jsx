@@ -21,22 +21,26 @@ const Carousel = () => {
     // Reset trailer state khi đóng modal
     const handleCloseTrailer = () => {
         setShowTrailer(false);
-        setSelectedMovie(null); // Reset selected movie
+        setSelectedMovie(null);
     };
+
+    // Mảng chứa ID các phim cần loại bỏ
+    const excludedMovieIds = [179387];
 
     useEffect(() => {
         const fetchMovies = async () => {
             try {
                 const params = { page: 1, language: 'vi' };
                 const response = await tmdbApi.getMoviesList(movieType.popular, { params });
-                // Lọc bỏ phim kinh dị và phim người lớn
+                // Lọc bỏ phim kinh dị, phim người lớn và các phim trong danh sách loại trừ
                 const filteredMovies = response.results.filter(movie => {
                     const isNotHorror = !movie.genre_ids.includes(27);  // 27 là id thể loại kinh dị
                     const isNotAdult = !movie.adult;
-                    return isNotHorror && isNotAdult;
+                    const isNotExcluded = !excludedMovieIds.includes(movie.id); // Kiểm tra ID có trong danh sách loại trừ
+                    return isNotHorror && isNotAdult && isNotExcluded;
                 });
 
-                setMovies(filteredMovies.slice(0, 7)); // Lấy tối đa 7 phim
+                setMovies(filteredMovies.slice(0, 7));
             } catch (error) {
                 console.error(error);
             }
