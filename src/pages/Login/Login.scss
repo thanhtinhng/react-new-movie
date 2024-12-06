@@ -28,17 +28,17 @@
     &__label {
       display: block;
       margin-bottom: 8px;
-      color: $text-color;
+      color: white;
       font-size: 16px;
     }
 
     &__input {
       width: 100%;
       padding: 12px;
-      border: 1px solid rgba($text-color, 0.2);
+      border: 1px solid rgba(white, 0.2);
       border-radius: 8px;
       background-color: rgba($body-background, 0.8);
-      color: $text-color;
+      color: white;
       font-family: $font-family;
       font-size: 16px;
 
@@ -59,7 +59,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: $text-color;
+      color: white;
       cursor: pointer;
       font-size: 16px;
 
@@ -82,7 +82,7 @@
       width: 100%;
       padding: 15px;
       background-color: $main-color;
-      color: $text-color;
+      color: white;
       border: none;
       border-radius: 8px;
       font-size: 18px;
@@ -98,7 +98,7 @@
     &__register-link {
       text-align: center;
       margin: 20px 0;
-      color: $text-color;
+      color: white;
       font-size: 16px;
 
       a {
@@ -117,7 +117,7 @@
       margin-top: 30px;
 
       &__text {
-        color: $text-color;
+        color: white;
         margin-bottom: 15px;
         font-size: 16px;
       }

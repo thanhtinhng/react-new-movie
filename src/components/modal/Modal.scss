@@ -1,15 +1,13 @@
 @use "../../scss/" as *;
 
 .modal {
-    @include flex(center, center);
     position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.37);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -24,8 +22,8 @@
         background-color: $body-background;
         width: fit-content;
         opacity: 0;
-        transform: translateY(-250px);
-        transition: transform 0.6s ease, opacity 0.6s ease;
+        transform: translateY(-270px);
+        transition: transform 0.7s ease, opacity 0.7s ease;
         position: relative;
         border-radius: 10px;
     }

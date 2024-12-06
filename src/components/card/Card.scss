@@ -14,9 +14,13 @@
     
     Button {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
+        inset: 0;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: fit-content;
+        transform: scale(0);
         transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
@@ -24,10 +28,7 @@
         content: '';
         position: absolute;
         @include overlay();
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        inset: 0;
         opacity: 0;
         transition: opacity 0.4s ease;
     }
@@ -37,6 +38,6 @@
     }
 
     &:hover Button {
-        transform: translate(-50%, -50%) scale(1);
+        transform: scale(1);
     }
 }
