@@ -101,8 +101,9 @@
             gap: 16px;
             margin-top: 16px;
 
-            &__watch-btn {
+            &__watch-btn, &__remove-btn {
                 padding-left: 45px;
+                position: relative; 
                 
                 i {
                     position: absolute;
@@ -110,10 +111,6 @@
                     top: 50%;
                     transform: translateY(-50%);
                 }
-            }
-
-            i {
-                margin-right: 8px;
             }
         }
     }
