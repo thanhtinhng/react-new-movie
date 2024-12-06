@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-
 import './Grid.scss';
-
-import { OutlineButton } from '../button/Button';
 import Card from '../card/Card';
 
-import tmdbApi, { category, movieType, tvType } from '../../api/tmdbApi';
+import tmdbApi from '../../api/tmdbApi';
 
 import ReactPaginate from 'react-paginate';
 
@@ -31,11 +28,11 @@ const Grid = (props) => {
             };
 
             switch (props.category) {
-                case category.movie:
-                    response = await tmdbApi.getMoviesList(movieType.popular, { params });
+                case 'movie':
+                    response = await tmdbApi.getMoviesList('popular', { params });
                     break;
-                default:
-                    response = await tmdbApi.getTvList(tvType.top_rated, { params });
+                case 'tv':
+                    response = await tmdbApi.getTvList('top_rated', { params });
             }
         } else {
             const params = {
@@ -44,12 +41,12 @@ const Grid = (props) => {
             };
             response = await tmdbApi.search(props.category, { params });
         }
-        
+
         // Lọc bỏ các phim trong danh sách loại trừ
-        const filteredResults = response.results.filter(movie => 
+        const filteredResults = response.results.filter(movie =>
             !excludedMovieIds.includes(movie.id)
         );
-        
+
         const limitedResults = filteredResults.slice(0, limit);
         setMovies(limitedResults);
         setTotalPages(response.total_pages);

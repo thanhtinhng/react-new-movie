@@ -25,7 +25,7 @@
     }
 
     p {
-      color: $text-color;
+      color: white;
       font-size: 1.1rem;
       line-height: 1.6;
       opacity: 0.9;
@@ -56,13 +56,13 @@
       }
 
       h3 {
-        color: $text-color;
+        color: white;
         font-size: 1.2rem;
         margin-bottom: 1rem;
       }
 
       p {
-        color: $text-color;
+        color: white;
         opacity: 0.8;
         font-size: 1rem;
       }
@@ -79,7 +79,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      color: $text-color;
+      color: white;
       font-size: 1.1rem;
 
       i {

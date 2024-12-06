@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -47,7 +47,7 @@ const Carousel = () => {
         };
         const getGenres = async () => {
             try {
-                const response = await tmdbApi.getGenresMovie(); // Sử dụng method mới
+                const response = await tmdbApi.getGenresMovie();
                 setGenresList(response.genres);
             } catch (error) {
                 console.error(error);

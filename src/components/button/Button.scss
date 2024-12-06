@@ -6,41 +6,37 @@ button {
 }
 
 .btn {
-    border: 3px solid transparent;
-    background-color: $main-color;
-    color: $text-color;
-    border-radius: 10px;
     padding: 8px 29px;
+    border-radius: 10px;
+    border: 3px solid transparent;
     font-size: 24px;
     font-weight: 600;
+    background-color: $main-color;
+    color: white;
     box-shadow: 0px 0px 7px 8px #23d18b43;
-    transition: box-shadow 0.3s ease, color 0.3s ease, background-color 0.3s ease;
-    position: relative;
-
+    transition: all 0.3s ease;
+    
     &:hover {
-        box-shadow: 0px 0px 7px 17px #ffffff43;
-        color: $main-color;
         background-color: white;
+        color: $main-color;
+        box-shadow: 0px 0px 7px 17px #ffffff43;
     }
+    
+    // &.small {
+    //     padding: 4px 24px;
+    //     border-width: 2px;
+    // }
 }
-
 
 .btn-outline {
     border: 3px solid white;
     background-color: transparent;
-    color: $text-color;
-    box-shadow: unset;
-    transition: color 0.3s ease, background-color 0.3s ease;
-
+    color: white;
+    box-shadow: none;
+    
     &:hover {
-        box-shadow: unset;
-        color: $main-color;
         background-color: white;
+        color: $main-color;
+        box-shadow: none;
     }
-}
-
-
-.btn.small {
-    border-width: 2px;
-    padding: 4px 24px;
 }

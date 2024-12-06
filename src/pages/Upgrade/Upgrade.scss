@@ -19,7 +19,7 @@
 
   &__subtitle {
     text-align: center;
-    color: $text-color;
+    color: white;
     font-size: 1.2rem;
     margin-bottom: 3rem;
     opacity: 0.8;
@@ -56,11 +56,11 @@
       .amount {
         font-size: 2rem;
         font-weight: bold;
-        color: $text-color;
+        color: white;
       }
 
       .period {
-        color: rgba($text-color, 0.7);
+        color: rgba(white, 0.7);
       }
     }
 
@@ -70,7 +70,7 @@
 
       li {
         margin-bottom: 1rem;
-        color: $text-color;
+        color: white;
 
         i {
           color: $main-color;
@@ -85,7 +85,7 @@
       border: none;
       border-radius: 8px;
       background: $main-color;
-      color: $text-color;
+      color: white;
       font-weight: bold;
       cursor: pointer;
       transition: background 0.3s ease;
@@ -128,12 +128,12 @@
         }
 
         h3 {
-          color: $text-color;
+          color: white;
           margin-bottom: 0.5rem;
         }
 
         p {
-          color: rgba($text-color, 0.7);
+          color: rgba(white, 0.7);
         }
       }
     }

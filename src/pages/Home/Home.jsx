@@ -1,16 +1,11 @@
 import React, { useState }  from 'react'
-// import Button, {OutlineButton} from '../components/button/Button'
 import './Home.scss'
-// import Modal, {ModalContent} from '../components/modal/Modal'
 import Carousel from '../../components/carousel/Carousel'
 import SlideList from '../../components/slidelist/SlideList'
 
 const Home = () => {
-
-  // const [showModal, setShowModal] = useState(false);
-
   return (
-    <div className='test'>
+    <div className='home_container'>
         <Carousel/>
         <div className='slide-container'>
           <h2>TV Shows Được Yêu Thích</h2>

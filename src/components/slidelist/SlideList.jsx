@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import tmdbApi from '../../api/tmdbApi';
 import { Navigation } from 'swiper/modules';
@@ -46,11 +45,6 @@ const SlideList = props => {
             </Swiper>
         </div>
     );
-}
-
-SlideList.propTypes = {
-    category: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired
 }
 
 export default SlideList;
