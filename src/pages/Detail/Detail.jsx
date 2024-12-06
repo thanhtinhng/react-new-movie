@@ -64,9 +64,17 @@ const Detail = () => {
 
 
                 <div className="genres">
-                  {item.genres && item.genres.slice(0, 5).map((genre, i) => (
-                    <span key={i} className="genres__item">{genre.name}</span>
-                  ))}
+                  {(() => {
+                    if (!item.genres) {
+                      return null;
+                    }
+                    const firstFiveGenres = item.genres.slice(0, 5);
+                    return firstFiveGenres.map((genre, i) => (
+                      <span key={i} className="genres__item">
+                        {genre.name}
+                      </span>
+                    ));
+                  })()}
                 </div>
 
 
@@ -151,7 +159,7 @@ const Detail = () => {
             </div>
 
             <div className="trailer-container">
-              <Trailer className='trailer' />setShowModalr
+              <Trailer className='trailer' />
               <h2 className='similar-header'>Phim Cùng Thể Loại</h2>
             </div>
             <SlideList category={genre} type="similar" id={item.id} />
