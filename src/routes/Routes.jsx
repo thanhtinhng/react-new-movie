@@ -12,6 +12,9 @@ import Watch from '../pages/Watch/Watch'
 import Login from '../pages/Login/Login'
 import Register from '../pages/Register/Register'
 import Contact from '../pages/Contact/Contact'
+import Upgrade from '../pages/Upgrade/Upgrade';
+import Payment from '../pages/Payment/Payment';
+import About from '../pages/About/About';
 
 const AppRoutes  = () => {
     return (
@@ -64,6 +67,18 @@ const AppRoutes  = () => {
             <Route
                 path='/contact'
                 element={<Contact/>}
+            />
+            <Route
+                path='/upgrade'
+                element={<Upgrade />}
+            />
+            <Route
+                path='/payment'
+                element={<Payment />}
+            />
+            <Route
+                path='/about'
+                element={<About />}
             />
         </Routes>
     );
