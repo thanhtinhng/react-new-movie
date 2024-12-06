@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="footer__content__col">
             <div className="footer__content__col__item-container">
               <Link to="/" className="footer__content__col__item-container__item">FAQ</Link>
-              <Link to="/" className="footer__content__col__item-container__item">Nâng cấp tài khoản</Link>
+              <Link to="/upgrade" className="footer__content__col__item-container__item">Nâng cấp tài khoản</Link>
               <Link to="/privacy" className="footer__content__col__item-container__item">Chính sách bảo mật</Link>
               <Link to="/login" className="footer__content__col__item-container__item">Đăng nhập</Link>
             </div>
