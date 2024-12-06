@@ -9,6 +9,7 @@ import SlideList from '../../components/slidelist/SlideList';
 import Button, { OutlineButton } from '../../components/button/Button';
 import Modal from '../../components/modal/Modal';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Detail = () => {
   const { genre, id } = useParams();
@@ -70,8 +71,10 @@ const Detail = () => {
                     }
                     const firstFiveGenres = item.genres.slice(0, 5);
                     return firstFiveGenres.map((genre, i) => (
-                      <span key={i} className="genres__item">
-                        {genre.name}
+                      <span className="genres__item">
+                        <Link to={`/movie`} key={i}>
+                          {genre.name}
+                        </Link>
                       </span>
                     ));
                   })()}
