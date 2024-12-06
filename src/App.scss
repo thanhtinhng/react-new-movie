@@ -1,4 +1,3 @@
-
 @use './scss/mixin' as *;
 @use './scss/variables' as *;
 
@@ -32,42 +31,28 @@ a:hover {
   color: $main-color;
 }
 
-button,
 input {
-    outline: 0;
+  outline: 0;
+}
+
+button {
+  outline: 0;
 }
 
 // Xóa dấu chấm đầu dòng của danh sách
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 iframe {
-    border: 0;
+  border: 0;
 }
 
 .container {
-    max-width: 1660px;
-    margin: auto;
+  max-width: 1655px;
+  margin: auto;
 }
-
-.mb-3 {
-    margin-bottom: 48px;
-}
-
-.mb-2 {
-    margin-bottom: 32px;
-}
-
-.section {
-    padding: 0 32px;
-}
-
-.section__header {
-    @include flex(center, space-between);
-}
-

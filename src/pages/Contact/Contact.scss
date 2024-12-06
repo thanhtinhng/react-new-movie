@@ -1,126 +1,137 @@
 @use '../../scss/' as *;
 
-.contact {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 140px;
+.contact__container {
 
-  &__container {
-    width: 100%;
-    max-width: 800px;
-    background-color: lighten($body-background, 5%);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: $box-shadow;
+  .contact__breadcrumb {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    width: 90%;
   }
 
-  &__title {
-    text-align: center;
-    color: $main-color;
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
+  .contact {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 180px;
 
-  &__info {
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: rgba($body-background, 0.5);
-    border-radius: 10px;
 
-    &__item {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      color: $text-color;
-      font-size: 18px;
-      margin-bottom: 15px;
-      padding: 10px;
-
-      i {
-        color: $main-color;
-        font-size: 24px;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  &__form {
-    &__group {
-      margin-bottom: 25px;
-    }
-
-    &__label {
-      display: block;
-      color: $text-color;
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
-
-    &__input,
-    &__textarea {
+    &__content {
       width: 100%;
-      padding: 12px;
-      border: 1px solid rgba($text-color, 0.2);
-      border-radius: 8px;
-      background-color: rgba($body-background, 0.8);
-      color: $text-color;
-      font-family: $font-family;
-      font-size: 16px;
-
-      &:focus {
-        outline: none;
-        border-color: $main-color;
-      }
+      max-width: 800px;
+      background-color: lighten($body-background, 5%);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: $box-shadow;
     }
 
-    &__textarea {
-      resize: vertical;
-      min-height: 120px;
+    &__title {
+      text-align: center;
+      color: $main-color;
+      font-size: 28px;
+      margin-bottom: 30px;
     }
 
-    &__rating {
-      display: flex;
-      gap: 15px;
+    &__info {
+      margin-bottom: 40px;
+      padding: 20px;
+      background-color: rgba($body-background, 0.5);
+      border-radius: 10px;
 
-      &__star {
-        cursor: pointer;
-        font-size: 24px;
-
-        input {
-          display: none;
-        }
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: $text-color;
+        font-size: 18px;
+        margin-bottom: 15px;
+        padding: 10px;
 
         i {
-          color: #ffd700;
-          transition: all 0.2s ease;
+          color: $main-color;
+          font-size: 24px;
         }
 
-        &:hover i,
-        input:checked ~ i {
-          transform: scale(1.6);
+        &:last-child {
+          margin-bottom: 0;
         }
       }
     }
 
-    &__submit {
-      width: 100%;
-      padding: 15px;
-      background-color: $main-color;
-      color: $text-color;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    &__form {
+      &__group {
+        margin-bottom: 25px;
+      }
 
-      &:hover {
-        background-color: darken($main-color, 10%);
+      &__label {
+        display: block;
+        color: $text-color;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      &__input,
+      &__textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid rgba($text-color, 0.2);
+        border-radius: 8px;
+        background-color: rgba($body-background, 0.8);
+        color: $text-color;
+        font-family: $font-family;
+        font-size: 16px;
+
+        &:focus {
+          outline: none;
+          border-color: $main-color;
+        }
+      }
+
+      &__textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      &__rating {
+        display: flex;
+        gap: 15px;
+
+        &__star {
+          cursor: pointer;
+          font-size: 24px;
+
+          input {
+            display: none;
+          }
+
+          i {
+            color: #ffd700;
+            transition: all 0.2s ease;
+          }
+
+          &:hover i,
+          input:checked~i {
+            transform: scale(1.6);
+          }
+        }
+      }
+
+      &__submit {
+        width: 100%;
+        padding: 15px;
+        background-color: $main-color;
+        color: $text-color;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: darken($main-color, 10%);
+        }
       }
     }
   }
