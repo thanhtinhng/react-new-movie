@@ -33,7 +33,7 @@
 
     &__navigation {
         @include flex(center, space-between);
-        width: 790px;
+        width: 900px;
         margin-right: 20px;
 
         li {
@@ -59,6 +59,47 @@
 
             &.active::after {
                 width: 100%;
+            }
+
+            &.has-dropdown {
+                position: relative;
+
+                i {
+                    margin-left: 5px;
+                    font-size: 12px;
+                }
+            }
+
+            .dropdown-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: rgba(22, 24, 30, 0.95);
+                border-radius: 4px;
+                padding: 16px;
+                min-width: 500px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                z-index: 100;
+
+                .dropdown-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 16px;
+
+                    .dropdown-item {
+                        color: #fff;
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        transition: all 0.3s ease;
+                        text-align: center;
+                        white-space: nowrap;
+
+                        &:hover {
+                            background: rgba(255, 255, 255, 0.1);
+                            color: $main-color;
+                        }
+                    }
+                }
             }
         }
     }
