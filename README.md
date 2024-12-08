@@ -53,6 +53,30 @@ npm start
 
 ---
 
+## Project Structure
+```
+src/
+  ├── api/            # API configuration and services
+  ├── assets/         # Images, fonts, and other static files
+  ├── components/     # Reusable components
+  ├── pages/          # Page components
+  ├── routes/         # Route configurations
+  ├── scss/          # Global SCSS files
+  ├── App.jsx        # Root component
+  └── index.js       # Entry point
+```
+
+## Features
+- Xem phim trực tuyến
+- Tìm kiếm phim
+- Lọc phim theo thể loại
+- Xem trailer
+- Thêm vào danh sách yêu thích
+- Đăng ký/Đăng nhập
+- Responsive design
+
+---
+
 # NewMovies - Online Movie Streaming Platform
 
 ## Installation and Setup Guide (English)
@@ -120,34 +144,3 @@ The application will run at [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## Project Structure
-```
-src/
-  ├── api/            # API configuration and services
-  ├── assets/         # Images, fonts, and other static files
-  ├── components/     # Reusable components
-  ├── pages/          # Page components
-  ├── routes/         # Route configurations
-  ├── scss/          # Global SCSS files
-  ├── App.jsx        # Root component
-  └── index.js       # Entry point
-```
-
-## Features
-- Xem phim trực tuyến
-- Tìm kiếm phim
-- Lọc phim theo thể loại
-- Xem trailer
-- Thêm vào danh sách yêu thích
-- Đăng ký/Đăng nhập
-- Responsive design
-
-## Contributing
-Vui lòng đọc [CONTRIBUTING.md](CONTRIBUTING.md) để biết thêm chi tiết về quy trình đóng góp.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
----
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
