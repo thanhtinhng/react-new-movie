@@ -73,7 +73,6 @@ src/
 - Xem trailer
 - Thêm vào danh sách yêu thích
 - Đăng ký/Đăng nhập
-- Responsive design
 
 ---
 
