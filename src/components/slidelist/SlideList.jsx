@@ -23,7 +23,9 @@ const SlideList = props => {
             } else {
                 rs = await tmdbApi.similar(props.category, props.id);
             }
-            setMovies(rs.results);
+            const results = rs.results
+            const limitedResults = results.slice(0, 20);
+            setMovies(limitedResults);
         }
         getList();
     }, []);

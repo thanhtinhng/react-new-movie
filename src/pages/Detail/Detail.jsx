@@ -27,7 +27,7 @@ const Detail = () => {
       try {
         const response = await tmdbApi.detail(genre, id, { params: {} });
         setItem(response);
-        window.scrollTo(0, 30)
+        // window.scrollTo(0, 30)
       } catch (error) {
         console.log(error);
       }

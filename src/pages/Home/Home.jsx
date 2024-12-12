@@ -10,7 +10,9 @@ const Home = () => {
 
   return (
     <div className='home_container'>
+
         <Carousel/>
+
         <div className='slide-container'>
           <div className="slide-header">
             <h2>TV Shows Được Yêu Thích</h2>
@@ -23,6 +25,7 @@ const Home = () => {
           </div>
           <SlideList type='top_rated' category='tv' />
         </div>
+
         <div className='slide-container'>
           <div className="slide-header">
             <h2>Phim Lẻ Được Yêu Thích</h2>
@@ -35,6 +38,7 @@ const Home = () => {
           </div>
           <SlideList type='top_rated' category='movie' />
         </div>
+        
     </div>
   )
 }

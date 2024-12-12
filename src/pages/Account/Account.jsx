@@ -39,7 +39,7 @@ const Account = () => {
           <input
             type="text"
             value={userData.fullName}
-            disabled={!editMode}
+            disabled={editMode}
             onChange={(e) => setUserData({...userData, fullName: e.target.value})}
           />
         </div>
@@ -59,7 +59,7 @@ const Account = () => {
           <input
             type="tel"
             value={userData.phone}
-            disabled={!editMode}
+            disabled={editMode}
             onChange={(e) => setUserData({...userData, phone: e.target.value})}
           />
         </div>
