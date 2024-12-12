@@ -12,7 +12,7 @@ const Cast = () => {
         const getCasts = async () => {
             try {
                 const response = await tmdbApi.credits(genre, id);
-                setCasts(response.cast.slice(0, 6));
+                setCasts(response.cast.slice(0, 3));
             } catch (error) {
                 console.log(error);
             }

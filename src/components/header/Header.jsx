@@ -95,7 +95,7 @@ const Header = () => {
                 <div className="dropdown-menu">
                   <div className="dropdown-grid">
                     {genres.map((genre) => (
-                      <Link key={genre.id} to="/tv" className="dropdown-item">
+                      <Link key={genre.id} to="/movie" className="dropdown-item">
                         {genre.name}
                       </Link>
                     ))}

@@ -9,7 +9,7 @@
 
 // Mixin "overplay" tạo lớp phủ màu đen với độ trong suốt có thể điều chỉnh
 // $color: màu nền cho lớp phủ (mặc định là màu đen)
-// $alpha: độ mờ (opacity) của màu nền (mặc định là 1.0 - không trong suốt)
+// $alpha: độ mờ (opacity) của màu nền (mặc định là 0.65)
 @mixin overlay {
     background-color: rgba($color: #000, $alpha: 0.65);
 }
